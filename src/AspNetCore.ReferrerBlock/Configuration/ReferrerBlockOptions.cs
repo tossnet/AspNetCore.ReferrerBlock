@@ -22,6 +22,7 @@ public class ReferrerBlockOptions
         "jbuif",
         "karyapemuda",
         "kawruhbasa",
+        "kaysdogs",
         "missywilkinson",
         "parakerja",
         "pvdwatersports",
