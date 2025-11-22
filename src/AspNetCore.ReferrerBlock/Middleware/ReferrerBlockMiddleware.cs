@@ -1,8 +1,8 @@
-﻿using AspNetCore.ReferrerBlock.Configuration;
+﻿using ReferrerBlock.Configuration;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 
-namespace AspNetCore.ReferrerBlock.Middleware;
+namespace ReferrerBlock.Middleware;
 
 public class ReferrerBlockMiddleware
 {

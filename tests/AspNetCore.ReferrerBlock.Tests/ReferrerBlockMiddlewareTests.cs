@@ -1,5 +1,5 @@
-﻿using AspNetCore.ReferrerBlock.Configuration;
-using AspNetCore.ReferrerBlock.Middleware;
+﻿using ReferrerBlock.Configuration;
+using ReferrerBlock.Middleware;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Moq;

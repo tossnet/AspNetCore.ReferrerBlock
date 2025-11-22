@@ -1,4 +1,4 @@
-﻿namespace AspNetCore.ReferrerBlock.Configuration;
+﻿namespace ReferrerBlock.Configuration;
 
 public class ReferrerBlockOptions
 {

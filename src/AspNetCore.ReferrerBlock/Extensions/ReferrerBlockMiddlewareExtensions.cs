@@ -1,5 +1,5 @@
-﻿using AspNetCore.ReferrerBlock.Configuration;
-using AspNetCore.ReferrerBlock.Middleware;
+﻿using ReferrerBlock.Configuration;
+using ReferrerBlock.Middleware;
 
 namespace Microsoft.AspNetCore.Builder;
 

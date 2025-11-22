@@ -5,11 +5,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
-		<PackageId>AspNetCore.ReferrerBlock</PackageId>
+		<PackageId>ReferrerBlock</PackageId>
 		<Version>1.0.0</Version>
 		<Authors>Christophe Peugnet</Authors>
 		<Company></Company>
-		<Description>ASP.NET Core middleware to block referrer spam and malicious traffic based on TLDs, domains, and patterns. Perfect for Blazor, MVC, and Razor Pages applications.</Description>
+		<Description>ReferrerBlock middleware to block referrer spam and malicious traffic based on TLDs, domains, and patterns. Perfect for Blazor, MVC, and Razor Pages applications.</Description>
 		<PackageTags>aspnetcore;middleware;security;spam;referrer;anti-spam</PackageTags>
 		<PackageProjectUrl>https://github.com/tossnet/AspNetCore.ReferrerBlock.git</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/tossnet/AspNetCore.ReferrerBlock.git</RepositoryUrl>
@@ -22,13 +22,9 @@
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<Copyright>2025</Copyright>
-		<PackageIcon>AspNetCore.ReferrerBlock.png</PackageIcon>
+		<PackageIcon>ReferrerBlock.png</PackageIcon>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Include="AspNetCore.ReferrerBlock.png" />
-  </ItemGroup>
 
 	<ItemGroup>
 		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
@@ -45,7 +41,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Update="AspNetCore.ReferrerBlock.png">
+	  <None Update="ReferrerBlock.png">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
 	  </None>
