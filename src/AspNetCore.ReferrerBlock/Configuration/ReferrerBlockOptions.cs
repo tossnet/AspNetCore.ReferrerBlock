@@ -41,6 +41,7 @@ public class ReferrerBlockOptions
     // List of blocked complete domains
     public HashSet<string> BlockedDomains { get; set; } = new(StringComparer.OrdinalIgnoreCase)
     {
+        "airplanesupdate.com",
         "aksarabrita.com",
         "barondamaluku.com",
         "cozynestplans.com",
@@ -48,6 +49,7 @@ public class ReferrerBlockOptions
         "kebumenupdate.com",
         "kiprahkita.com",
         "pengkicau.com",
+        "periodcostume.top",
         "mojok.co",
         "patioinstallationcompanies.com",
         "secondechance.org",
