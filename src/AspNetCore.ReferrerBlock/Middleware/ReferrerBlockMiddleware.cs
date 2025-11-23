@@ -18,6 +18,11 @@ public class ReferrerBlockMiddleware
         _next = next;
         _logger = logger;
         _options = options;
+
+        // Remove null or empty values from collections to prevent blocking legitimate traffic
+        _options.BlockedDomains?.RemoveWhere(string.IsNullOrWhiteSpace);
+        _options.BlockedTLDs?.RemoveWhere(string.IsNullOrWhiteSpace);
+        _options.BlockedPatterns?.RemoveWhere(string.IsNullOrWhiteSpace);
     }
 
     public async Task InvokeAsync(HttpContext context)
@@ -60,19 +65,26 @@ public class ReferrerBlockMiddleware
     private bool IsBlocked(string host)
     {
         // Check TLDs - TLDs already contain the dot (e.g., ".icu")
-        if (_options.BlockedTLDs.Any(tld => host.EndsWith(tld, StringComparison.OrdinalIgnoreCase)))
+        if (_options.BlockedTLDs != null && 
+            _options.BlockedTLDs.Any(tld => !string.IsNullOrWhiteSpace(tld) && 
+                                           host.EndsWith(tld, StringComparison.OrdinalIgnoreCase)))
             return true;
 
         // Check exact domains
-        if (_options.BlockedDomains.Contains(host, StringComparer.OrdinalIgnoreCase))
+        if (_options.BlockedDomains != null && 
+            _options.BlockedDomains.Contains(host, StringComparer.OrdinalIgnoreCase))
             return true;
 
         // Check subdomains
-        if (_options.BlockedDomains.Any(blocked => host.EndsWith($".{blocked}", StringComparison.OrdinalIgnoreCase)))
+        if (_options.BlockedDomains != null && 
+            _options.BlockedDomains.Any(blocked => !string.IsNullOrWhiteSpace(blocked) && 
+                                                   host.EndsWith($".{blocked}", StringComparison.OrdinalIgnoreCase)))
             return true;
 
         // Check patterns
-        if (_options.BlockedPatterns.Any(pattern => host.Contains(pattern, StringComparison.OrdinalIgnoreCase)))
+        if (_options.BlockedPatterns != null && 
+            _options.BlockedPatterns.Any(pattern => !string.IsNullOrWhiteSpace(pattern) && 
+                                                    host.Contains(pattern, StringComparison.OrdinalIgnoreCase)))
             return true;
 
         return false;
