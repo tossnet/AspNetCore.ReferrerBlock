@@ -29,7 +29,7 @@ public class ReferrerBlockMiddlewareTests
     #region Tests sans Referer
 
     [TestMethod]
-    public async Task InvokeAsync_NoReferer_ShouldCallNext()
+    public async Task NoReferer_ShouldCallNext()
     {
         // Arrange
         var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
@@ -42,7 +42,7 @@ public class ReferrerBlockMiddlewareTests
     }
 
     [TestMethod]
-    public async Task InvokeAsync_EmptyReferer_ShouldCallNext()
+    public async Task EmptyReferer_ShouldCallNext()
     {
         // Arrange
         _httpContext.Request.Headers.Referer = string.Empty;
@@ -60,7 +60,7 @@ public class ReferrerBlockMiddlewareTests
     #region Tests avec Referer valide (non bloqué)
 
     [TestMethod]
-    public async Task InvokeAsync_ValidReferer_NotBlocked_ShouldCallNext()
+    public async Task ValidReferer_NotBlocked_ShouldCallNext()
     {
         // Arrange
         _httpContext.Request.Headers.Referer = "https://www.google.com";
@@ -75,7 +75,7 @@ public class ReferrerBlockMiddlewareTests
     }
 
     [TestMethod]
-    public async Task InvokeAsync_ValidReferer_AllowedTLD_ShouldCallNext()
+    public async Task ValidReferer_AllowedTLD_ShouldCallNext()
     {
         // Arrange
         _httpContext.Request.Headers.Referer = "https://example.com";
@@ -93,7 +93,7 @@ public class ReferrerBlockMiddlewareTests
     #region Tests TLD bloqués
 
     [TestMethod]
-    public async Task InvokeAsync_BlockedTLD_ICU_ShouldReturn410()
+    public async Task BlockedTLD_ICU_ShouldReturn410()
     {
         // Arrange
         _httpContext.Request.Headers.Referer = "https://spam.icu";
@@ -108,7 +108,7 @@ public class ReferrerBlockMiddlewareTests
     }
 
     [TestMethod]
-    public async Task InvokeAsync_BlockedTLD_XYZ_ShouldReturn410()
+    public async Task BlockedTLD_XYZ_ShouldReturn410()
     {
         // Arrange
         _httpContext.Request.Headers.Referer = "https://malicious.xyz";
@@ -123,7 +123,7 @@ public class ReferrerBlockMiddlewareTests
     }
 
     [TestMethod]
-    public async Task InvokeAsync_BlockedTLD_BizId_ShouldReturn410()
+    public async Task BlockedTLD_BizId_ShouldReturn410()
     {
         // Arrange
         _httpContext.Request.Headers.Referer = "https://spam.biz.id";
@@ -137,7 +137,21 @@ public class ReferrerBlockMiddlewareTests
     }
 
     [TestMethod]
-    public async Task InvokeAsync_BlockedTLD_CaseInsensitive_ShouldReturn410()
+    public async Task BlockedTLD_id_ShouldReturn410()
+    {
+        // Arrange
+        _httpContext.Request.Headers.Referer = "hk4.ikancupang.id";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+    }
+
+    [TestMethod]
+    public async Task BlockedTLD_CaseInsensitive_ShouldReturn410()
     {
         // Arrange
         _httpContext.Request.Headers.Referer = "https://SPAM.ICU";
@@ -155,7 +169,7 @@ public class ReferrerBlockMiddlewareTests
     #region Tests domaines bloqués
 
     [TestMethod]
-    public async Task InvokeAsync_BlockedDomain_Exact_ShouldReturn410()
+    public async Task BlockedDomain_Exact_ShouldReturn410()
     {
         // Arrange
         _httpContext.Request.Headers.Referer = "https://gazdp.com";
@@ -170,7 +184,7 @@ public class ReferrerBlockMiddlewareTests
     }
 
     [TestMethod]
-    public async Task InvokeAsync_BlockedDomain_Subdomain_ShouldReturn410()
+    public async Task BlockedDomain_Subdomain_ShouldReturn410()
     {
         // Arrange
         _httpContext.Request.Headers.Referer = "https://www.gazdp.com";
@@ -184,7 +198,7 @@ public class ReferrerBlockMiddlewareTests
     }
 
     [TestMethod]
-    public async Task InvokeAsync_BlockedDomain_DeepSubdomain_ShouldReturn410()
+    public async Task BlockedDomain_DeepSubdomain_ShouldReturn410()
     {
         // Arrange
         _httpContext.Request.Headers.Referer = "https://sub.example.gazdp.com";
@@ -198,7 +212,7 @@ public class ReferrerBlockMiddlewareTests
     }
 
     [TestMethod]
-    public async Task InvokeAsync_BlockedDomain_CaseInsensitive_ShouldReturn410()
+    public async Task BlockedDomain_CaseInsensitive_ShouldReturn410()
     {
         // Arrange
         _httpContext.Request.Headers.Referer = "https://GAZDP.COM";
@@ -211,12 +225,27 @@ public class ReferrerBlockMiddlewareTests
         Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
     }
 
+    [TestMethod]
+    public async Task BlockedDomain_MojokCo_Subdomain_ShouldReturn410()
+    {
+        // Arrange
+        _httpContext.Request.Headers.Referer = "https://lifestyle.mojok.co/";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+        _nextMock.Verify(next => next(_httpContext), Times.Never);
+    }
+
     #endregion
 
     #region Tests patterns bloqués
 
     [TestMethod]
-    public async Task InvokeAsync_BlockedPattern_ShouldReturn410()
+    public async Task BlockedPattern_ShouldReturn410()
     {
         // Arrange
         _httpContext.Request.Headers.Referer = "https://ctysss.example.com";
@@ -231,7 +260,7 @@ public class ReferrerBlockMiddlewareTests
     }
 
     [TestMethod]
-    public async Task InvokeAsync_BlockedPattern_InMiddle_ShouldReturn410()
+    public async Task BlockedPattern_InMiddle_ShouldReturn410()
     {
         // Arrange
         _httpContext.Request.Headers.Referer = "https://shop-ctysss-online.com";
@@ -245,7 +274,7 @@ public class ReferrerBlockMiddlewareTests
     }
 
     [TestMethod]
-    public async Task InvokeAsync_BlockedPattern_CaseInsensitive_ShouldReturn410()
+    public async Task BlockedPattern_CaseInsensitive_ShouldReturn410()
     {
         // Arrange
         _httpContext.Request.Headers.Referer = "https://CTYSSS.example.com";
@@ -263,7 +292,7 @@ public class ReferrerBlockMiddlewareTests
     #region Tests d'erreurs
 
     [TestMethod]
-    public async Task InvokeAsync_MalformedReferer_ShouldCallNext()
+    public async Task MalformedReferer_ShouldCallNext()
     {
         // Arrange
         _httpContext.Request.Headers.Referer = "not-a-valid-uri";
@@ -289,7 +318,7 @@ public class ReferrerBlockMiddlewareTests
     #region Tests de logging
 
     [TestMethod]
-    public async Task InvokeAsync_BlockedReferer_ShouldLogWarning()
+    public async Task BlockedReferer_ShouldLogWarning()
     {
         // Arrange
         _httpContext.Request.Headers.Referer = "https://spam.icu";
@@ -314,7 +343,7 @@ public class ReferrerBlockMiddlewareTests
     #region Tests de réponse
 
     [TestMethod]
-    public async Task InvokeAsync_BlockedReferer_ShouldReturnHTMLResponse()
+    public async Task BlockedReferer_ShouldReturnHTMLResponse()
     {
         // Arrange
         _httpContext.Request.Headers.Referer = "https://spam.icu";
@@ -334,7 +363,7 @@ public class ReferrerBlockMiddlewareTests
     }
 
     [TestMethod]
-    public async Task InvokeAsync_BlockedReferer_ShouldIncludeDelay()
+    public async Task BlockedReferer_ShouldIncludeDelay()
     {
         // Arrange
         _httpContext.Request.Headers.Referer = "https://spam.icu";
@@ -355,7 +384,7 @@ public class ReferrerBlockMiddlewareTests
     #region Tests de scénarios réels
 
     [TestMethod]
-    public async Task InvokeAsync_MultipleBlockedDomains_ShouldBlockAll()
+    public async Task MultipleBlockedDomains_ShouldBlockAll()
     {
         // Arrange
         var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
@@ -381,7 +410,7 @@ public class ReferrerBlockMiddlewareTests
     }
 
     [TestMethod]
-    public async Task InvokeAsync_HTTPAndHTTPS_BothShouldBeBlocked()
+    public async Task HTTPAndHTTPS_BothShouldBeBlocked()
     {
         // Arrange
         var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
@@ -401,6 +430,162 @@ public class ReferrerBlockMiddlewareTests
         // Assert
         Assert.AreEqual(StatusCodes.Status410Gone, httpContext.Response.StatusCode);
         Assert.AreEqual(StatusCodes.Status410Gone, httpsContext.Response.StatusCode);
+    }
+
+    #endregion
+
+    #region Tests des cas limites (Edge Cases)
+
+    [TestMethod]
+    public async Task InvokeAsync_BlockedTLD_WithPort_ShouldReturn410()
+    {
+        // Arrange
+        _httpContext.Request.Headers.Referer = "https://spam.icu:8080/path";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+        _nextMock.Verify(next => next(_httpContext), Times.Never);
+    }
+
+    [TestMethod]
+    public async Task InvokeAsync_BlockedTLD_WithQueryString_ShouldReturn410()
+    {
+        // Arrange
+        _httpContext.Request.Headers.Referer = "https://spam.icu?param=value&other=test";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+    }
+
+    [TestMethod]
+    public async Task InvokeAsync_BlockedTLD_WithFragment_ShouldReturn410()
+    {
+        // Arrange
+        _httpContext.Request.Headers.Referer = "https://spam.icu#section";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+    }
+
+    [TestMethod]
+    public async Task InvokeAsync_BlockedTLD_WithPath_ShouldReturn410()
+    {
+        // Arrange
+        _httpContext.Request.Headers.Referer = "https://spam.icu/deep/path/to/page.html";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+    }
+
+    [TestMethod]
+    public async Task InvokeAsync_MultipleSubdomains_BlockedTLD_ShouldReturn410()
+    {
+        // Arrange
+        _httpContext.Request.Headers.Referer = "https://deep.sub.domain.spam.icu";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+    }
+
+    [TestMethod]
+    public async Task InvokeAsync_IPv4Address_ShouldCallNext()
+    {
+        // Arrange
+        _httpContext.Request.Headers.Referer = "http://192.168.1.1";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        _nextMock.Verify(next => next(_httpContext), Times.Once);
+        Assert.AreNotEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+    }
+
+    [TestMethod]
+    public async Task InvokeAsync_ComplexURL_AllComponents_BlockedTLD_ShouldReturn410()
+    {
+        // Arrange
+        _httpContext.Request.Headers.Referer = "https://sub.spam.icu:8080/path/to/page?param1=value1&param2=value2#section";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+    }
+
+    [TestMethod]
+    public async Task InvokeAsync_LegitimateSubdomain_SimilarToBlocked_ShouldNotBlock()
+    {
+        // Arrange - Verify that "notgazdp.com" is NOT blocked when "gazdp.com" is blocked
+        _httpContext.Request.Headers.Referer = "https://notgazdp.com";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        _nextMock.Verify(next => next(_httpContext), Times.Once);
+        Assert.AreNotEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+    }
+
+    [TestMethod]
+    public async Task InvokeAsync_EmptyStringInOptions_ShouldNotCrash()
+    {
+        // Arrange
+        var customOptions = new ReferrerBlockOptions();
+        customOptions.BlockedDomains.Add(string.Empty);
+        customOptions.BlockedPatterns.Add(string.Empty);
+        _httpContext.Request.Headers.Referer = "https://example.com";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, customOptions);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert - Should not crash, should process normally
+        _nextMock.Verify(next => next(_httpContext), Times.Once);
+    }
+
+    [TestMethod]
+    public async Task InvokeAsync_NullCollectionsInOptions_ShouldNotCrash()
+    {
+        // Arrange
+        var customOptions = new ReferrerBlockOptions
+        {
+            BlockedDomains = null!,
+            BlockedTLDs = null!,
+            BlockedPatterns = null!
+        };
+        _httpContext.Request.Headers.Referer = "https://spam.icu";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, customOptions);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert - Should not crash, should allow through (no blocking rules)
+        _nextMock.Verify(next => next(_httpContext), Times.Once);
     }
 
     #endregion

@@ -28,6 +28,14 @@ public class ReferrerBlockMiddleware
         {
             try
             {
+                // add a schema by defaut is missing
+                if (!referer.StartsWith("http://", StringComparison.OrdinalIgnoreCase) &&
+                    !referer.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
+                {
+                    referer = "https://" + referer;
+                }
+
+
                 var uri = new Uri(referer);
                 var host = uri.Host.ToLowerInvariant();
 
@@ -59,6 +67,28 @@ public class ReferrerBlockMiddleware
 
     private bool IsBlocked(string host)
     {
+        //// Check TLDs - TLDs already contain the dot (e.g., ".icu")
+        //if (_options.BlockedTLDs != null &&
+        //    _options.BlockedTLDs.Any(tld => !string.IsNullOrWhiteSpace(tld) &&
+        //                                   host.EndsWith(tld, StringComparison.OrdinalIgnoreCase)))
+        //    return true;
+
+        //// Check exact domains
+        //if (_options.BlockedDomains != null &&
+        //    _options.BlockedDomains.Contains(host, StringComparer.OrdinalIgnoreCase))
+        //    return true;
+
+        //// Check subdomains
+        //if (_options.BlockedDomains.Any(blocked => host.EndsWith($".{blocked}", StringComparison.OrdinalIgnoreCase)))
+        //    return true;
+
+        //// Check patterns
+        //if (_options.BlockedDomains != null &&
+        //   _options.BlockedDomains.Any(blocked => !string.IsNullOrWhiteSpace(blocked) &&
+        //                                          host.EndsWith($".{blocked}", StringComparison.OrdinalIgnoreCase)))
+        //    return true;
+
+
         // Check TLDs - TLDs already contain the dot (e.g., ".icu")
         if (_options.BlockedTLDs.Any(tld => host.EndsWith(tld, StringComparison.OrdinalIgnoreCase)))
             return true;
