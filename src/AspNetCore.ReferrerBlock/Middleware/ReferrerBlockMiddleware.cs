@@ -60,6 +60,8 @@ public class ReferrerBlockMiddleware
     private bool IsBlocked(string host)
     {
         // Check TLDs - TLDs already contain the dot (e.g., ".icu")
+        // Note: We check for null/whitespace here as well (despite extension method cleaning)
+        // to handle cases where middleware is instantiated directly without the extension method
         if (_options.BlockedTLDs != null && 
             _options.BlockedTLDs.Any(tld => !string.IsNullOrWhiteSpace(tld) && 
                                            host.EndsWith(tld, StringComparison.OrdinalIgnoreCase)))
