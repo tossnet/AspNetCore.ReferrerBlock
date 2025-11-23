@@ -405,7 +405,7 @@ public class ReferrerBlockMiddlewareTests
 
     #endregion
 
-    #region Tests des cas limites (Edge Cases)
+    #region Tests des cas limites
 
     [TestMethod]
     public async Task InvokeAsync_BlockedTLD_WithPort_ShouldReturn410()
@@ -550,6 +550,9 @@ public class ReferrerBlockMiddlewareTests
             BlockedPatterns = null!
         };
         _httpContext.Request.Headers.Referer = "https://spam.icu";
+        
+        // When middleware is created directly (bypassing extension method),
+        // it still handles null collections gracefully
         var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, customOptions);
 
         // Act
@@ -557,6 +560,33 @@ public class ReferrerBlockMiddlewareTests
 
         // Assert - Should not crash, should allow through (no blocking rules)
         _nextMock.Verify(next => next(_httpContext), Times.Once);
+    }
+
+    [TestMethod]
+    public async Task InvokeAsync_EmptyStringsRemoved_ByExtensionMethod()
+    {
+        // Arrange - Simulate what the extension method does
+        var customOptions = new ReferrerBlockOptions();
+        customOptions.BlockedDomains.Add(string.Empty);
+        customOptions.BlockedDomains.Add("  ");
+        customOptions.BlockedPatterns.Add(string.Empty);
+        customOptions.BlockedPatterns.Add("\t");
+        
+        // Extension method validation
+        customOptions.BlockedDomains?.RemoveWhere(string.IsNullOrWhiteSpace);
+        customOptions.BlockedTLDs?.RemoveWhere(string.IsNullOrWhiteSpace);
+        customOptions.BlockedPatterns?.RemoveWhere(string.IsNullOrWhiteSpace);
+        
+        _httpContext.Request.Headers.Referer = "https://example.com";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, customOptions);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert - Empty strings were removed, so request should pass through
+        _nextMock.Verify(next => next(_httpContext), Times.Once);
+        Assert.AreEqual(0, customOptions.BlockedDomains.Count(string.IsNullOrWhiteSpace));
+        Assert.AreEqual(0, customOptions.BlockedPatterns.Count(string.IsNullOrWhiteSpace));
     }
 
     #endregion

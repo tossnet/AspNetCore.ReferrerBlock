@@ -18,11 +18,6 @@ public class ReferrerBlockMiddleware
         _next = next;
         _logger = logger;
         _options = options;
-
-        // Remove null or empty values from collections to prevent blocking legitimate traffic
-        _options.BlockedDomains?.RemoveWhere(string.IsNullOrWhiteSpace);
-        _options.BlockedTLDs?.RemoveWhere(string.IsNullOrWhiteSpace);
-        _options.BlockedPatterns?.RemoveWhere(string.IsNullOrWhiteSpace);
     }
 
     public async Task InvokeAsync(HttpContext context)

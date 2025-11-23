@@ -12,6 +12,11 @@ public static class ReferrerBlockMiddlewareExtensions
         var options = new ReferrerBlockOptions();
         configure?.Invoke(options);
 
+        // Remove null or empty values from collections to prevent blocking legitimate traffic
+        options.BlockedDomains?.RemoveWhere(string.IsNullOrWhiteSpace);
+        options.BlockedTLDs?.RemoveWhere(string.IsNullOrWhiteSpace);
+        options.BlockedPatterns?.RemoveWhere(string.IsNullOrWhiteSpace);
+
         return app.UseMiddleware<ReferrerBlockMiddleware>(options);
     }
 }
