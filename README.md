@@ -24,3 +24,7 @@ app.UseReferrerBlock(options => {
     options.BlockedPatterns.Add("malicious"); 
     });
 ```
+
+## 📊 Blocked Domains
+
+See [BLOCKED_DOMAINS.md](BLOCKED_DOMAINS.md) for the complete list of blocked domains, TLDs, and patterns with their addition history.
