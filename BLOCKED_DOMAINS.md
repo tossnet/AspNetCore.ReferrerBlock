@@ -21,6 +21,10 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 |------|-------|-------|--------|
 | Domain | airplanesupdate.com | 2025-11-23 | Referrer spam (detected: hk11.airplanesupdate.com, multiple subdomain variants) |
 | Domain | periodcostume.top | 2025-11-23 | Referrer spam |
+| Domain | globalinsuranceresourcecenter.com | 2025-11-23 | Referrer spam |
+| Domain | liveasiannews.com | 2025-11-24 | Referrer spam |
+| Domain | indonesiamapan.com | 2025-11-24 | Referrer spam |
+| Domain | biayakuliah.id | 2025-11-24 | Referrer spam |
 
 ---
 
