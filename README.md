@@ -62,6 +62,7 @@ app.UseReferrerBlock(options =>
     options.BlockedTLDs.Add(".suspicious"); 
     options.BlockedPatterns.Add("malicious"); 
 });
+```
 
 ## 📊 Blocked Domains
 
