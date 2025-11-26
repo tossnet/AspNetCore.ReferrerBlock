@@ -25,6 +25,12 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | liveasiannews.com | 2025-11-24 | Referrer spam |
 | Domain | indonesiamapan.com | 2025-11-24 | Referrer spam |
 | Domain | biayakuliah.id | 2025-11-24 | Referrer spam |
+| Domain | iklanbarisposkota.top | 2025-11-24 | Referrer spam |
+| Domain | chfaloans.com | 2025-11-24 | Referrer spam |
+| Domain | wagnerdom.local | 2025-11-25 | Referrer spam |
+| Domain | brandipphoto.com | 2025-11-26 | Referrer spam |
+| Domain | (glad., eth.)teknowarta.com | 2025-11-26 | Referrer spam |
+| Domain | def-atk.com | 2025-11-26 | Referrer spam |
 
 ---
 
