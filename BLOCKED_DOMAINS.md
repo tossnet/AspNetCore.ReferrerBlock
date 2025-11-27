@@ -31,6 +31,9 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | brandipphoto.com | 2025-11-26 | Referrer spam |
 | Domain | (glad., eth.)teknowarta.com | 2025-11-26 | Referrer spam |
 | Domain | def-atk.com | 2025-11-26 | Referrer spam |
+| Domain | genshindb.org | 2025-11-26 | Referrer spam |
+| Domain | hellyeahomeland.com | 2025-11-26 | Referrer spam |
+| Domain | petalsearch.com | 2025-11-26 | Referrer spam |
 
 ---
 
