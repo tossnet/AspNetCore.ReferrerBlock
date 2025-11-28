@@ -34,6 +34,9 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | genshindb.org | 2025-11-26 | Referrer spam |
 | Domain | hellyeahomeland.com | 2025-11-26 | Referrer spam |
 | Domain | petalsearch.com | 2025-11-26 | Referrer spam |
+| Domain | (hk9..)seohost.us | 2025-11-27 | Referrer spam |
+| Domain | (sports.)nativeindonesia.com | 2025-11-27 | Referrer spam |
+| Domain | (tools.)genshindb.org | 2025-11-27 | Referrer spam |
 
 ---
 
