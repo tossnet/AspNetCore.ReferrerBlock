@@ -31,12 +31,15 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | brandipphoto.com | 2025-11-26 | Referrer spam |
 | Domain | (glad., eth.)teknowarta.com | 2025-11-26 | Referrer spam |
 | Domain | def-atk.com | 2025-11-26 | Referrer spam |
-| Domain | genshindb.org | 2025-11-26 | Referrer spam |
+| Domain | (tools.)genshindb.org | 2025-11-26 | Referrer spam |
 | Domain | hellyeahomeland.com | 2025-11-26 | Referrer spam |
 | Domain | petalsearch.com | 2025-11-26 | Referrer spam |
 | Domain | (hk9..)seohost.us | 2025-11-27 | Referrer spam |
 | Domain | (sports.)nativeindonesia.com | 2025-11-27 | Referrer spam |
-| Domain | (tools.)genshindb.org | 2025-11-27 | Referrer spam |
+| Domain | (hk n.)selectaproperty.us | 2025-11-28 | Referrer spam |
+| Domain | (iqri n.)pauljimandjoespodcast.com | 2025-11-28 | Referrer spam |
+| Domain | thebirdlore.com | 2025-11-28 | Referrer spam |
+| Domain | porosjambimedia.com | 2025-11-28 | Referrer spam |
 
 ---
 
