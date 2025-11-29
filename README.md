@@ -2,7 +2,7 @@
 
 # ReferrerBlock
 
-[![NuGet](https://img.shields.io/nuget/v/AspNetCore.ReferrerBlock.svg)](https://www.nuget.org/packages/ReferrerBlock/)  ![BlazorWinOld Nuget Package](https://img.shields.io/nuget/dt/ReferrerBlock)
+[![NuGet](https://img.shields.io/nuget/v/ReferrerBlock.svg)](https://www.nuget.org/packages/ReferrerBlock/)  ![BlazorWinOld Nuget Package](https://img.shields.io/nuget/dt/ReferrerBlock)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ReferrerBlock middleware to block referrer spam and malicious traffic.
