@@ -57,6 +57,7 @@ public class ReferrerBlockOptions
         "kebumenupdate.com",
         "kiprahkita.com",
         "liveasiannews.com",
+        "mitsubishiprice.com",
         "nativeindonesia.com",
         "pengkicau.com",
         "periodcostume.top",
@@ -72,7 +73,7 @@ public class ReferrerBlockOptions
         "tugassains.com",
         "wagnerdom.local",
         "wartaupdate.com",
-        "wellsfederal",
+        "wellsfederal.com",
         "xlyanghub.com",
         "zhengzhouchendi.com",
     };

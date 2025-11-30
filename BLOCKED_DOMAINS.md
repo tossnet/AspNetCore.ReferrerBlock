@@ -40,6 +40,7 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | (iqri n.)pauljimandjoespodcast.com | 2025-11-28 | Referrer spam |
 | Domain | thebirdlore.com | 2025-11-28 | Referrer spam |
 | Domain | porosjambimedia.com | 2025-11-28 | Referrer spam |
+| Domain | (iqri n.)mitsubishiprice.com | 2025-11-30 | Referrer spam |
 
 ---
 
