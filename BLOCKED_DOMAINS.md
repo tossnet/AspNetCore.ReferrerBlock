@@ -41,6 +41,9 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | thebirdlore.com | 2025-11-28 | Referrer spam |
 | Domain | porosjambimedia.com | 2025-11-28 | Referrer spam |
 | Domain | (iqri n.)mitsubishiprice.com | 2025-11-30 | Referrer spam |
+| Domain | lovesyh.com | 2025-12-01 | Referrer spam |
+| Domain | tipgalore.com | 2025-12-01 | Referrer spam |
+| Domain | vtpcys.com | 2025-12-02 | Referrer spam |
 
 ---
 
