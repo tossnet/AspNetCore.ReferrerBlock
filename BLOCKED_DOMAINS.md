@@ -52,6 +52,15 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | vip.vivarecharge.com | 2025-12-05 | Referrer spam |
 | Domain | fintech.syrfy.com | 2025-12-05 | Referrer spam |
 | Domain | jy47.top | 2025-12-05 | Referrer spam |
+| Domain | refinance.qccaaf.com | 2025-12-05 | Referrer spam |
+| Domain | shareit.nwgme.online | 2025-12-05 | Referrer spam |
+| Domain | goes.greenpeakshinecleaning.com | 2025-12-06 | Referrer spam |
+| Domain | crminsightspro.com | 2025-12-06 | Referrer spam |
+| Domain | education.jawapos.com | 2025-12-06 | Referrer spam |
+| Domain | gs2.trailerhomeleveling.com | 2025-12-06 | Referrer spam |
+| Domain | fn.needlecorner.com | 2025-12-06 | Referrer spam |
+| Domain | jersey.kuyasfoodexpress.com | 2025-12-06 | Referrer spam |
+
 
 
 ---
