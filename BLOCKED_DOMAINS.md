@@ -55,11 +55,16 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | refinance.qccaaf.com | 2025-12-05 | Referrer spam |
 | Domain | shareit.nwgme.online | 2025-12-05 | Referrer spam |
 | Domain | goes.greenpeakshinecleaning.com | 2025-12-06 | Referrer spam |
-| Domain | crminsightspro.com | 2025-12-06 | Referrer spam |
 | Domain | education.jawapos.com | 2025-12-06 | Referrer spam |
 | Domain | gs2.trailerhomeleveling.com | 2025-12-06 | Referrer spam |
 | Domain | fn.needlecorner.com | 2025-12-06 | Referrer spam |
 | Domain | jersey.kuyasfoodexpress.com | 2025-12-06 | Referrer spam |
+| Domain | ca.galaxys21manual.com | 2025-12-07 | Referrer spam |
+| Domain | dgfzg.com | 2025-12-08 | Referrer spam |
+| Domain | guide.zqauc.com | 2025-12-08 | Referrer spam |
+| Domain | wantmybots.com | 2025-12-09 | Referrer spam. Multiple subdomain variants |
+| Domain | saastoolcompare.com | 2025-12-09 | Referrer spam.  |
+
 
 
 
