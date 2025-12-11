@@ -64,6 +64,11 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | guide.zqauc.com | 2025-12-08 | Referrer spam |
 | Domain | wantmybots.com | 2025-12-09 | Referrer spam. Multiple subdomain variants |
 | Domain | saastoolcompare.com | 2025-12-09 | Referrer spam.  |
+| Domain | tr.theguineapigexpert.com | 2025-12-11 | Referrer spam.  |
+| Domain | crmsoftwareedge.com | 2025-12-11 | Referrer spam.  |
+| Domain | topikbisnis.com | 2025-12-11 | Referrer spam. Multiple subdomain variants |
+| Domain | penjudihijrah.com | 2025-12-11 | Referrer spam. Multiple subdomain variants |
+| Domain | fiveminutesgames.com | 2025-12-11 | Referrer spam. |
 
 
 
