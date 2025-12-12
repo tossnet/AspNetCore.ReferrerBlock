@@ -11,6 +11,14 @@ public class ReferrerBlockOptions
         ".in",
         ".xyz",
     };
+
+    // List of blocked subdomain prefixes (e.g., "iqri" matches iqri., iqri1., iqri18., etc.)
+    public HashSet<string> BlockedSubdomainPrefixes { get; set; } = new(StringComparer.OrdinalIgnoreCase)
+    {
+        "iqri",
+        "hk",
+    };
+
     // List of suspicious domain patterns (incomplete or generic domains)
     public HashSet<string> BlockedPatterns { get; set; } = new(StringComparer.OrdinalIgnoreCase)
     {
@@ -74,6 +82,7 @@ public class ReferrerBlockOptions
         "mojok.co",
         "needlecorner.com",
         "nwgme.online",
+        "oneadcc.com",
         "pauljimandjoespodcast.com",
         "patioinstallationcompanies.com",
         "penjudihijrah.com",
@@ -84,6 +93,7 @@ public class ReferrerBlockOptions
         "secondechance.org",
         "selectaproperty.us",
         "seohost.us",
+        "smartcrmmanager.com",
         "soldatiki.info",
         "syrfy.com",
         "teknowarta.com",

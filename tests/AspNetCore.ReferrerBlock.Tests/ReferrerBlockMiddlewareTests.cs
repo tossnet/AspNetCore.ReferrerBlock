@@ -242,6 +242,144 @@ public class ReferrerBlockMiddlewareTests
 
     #endregion
 
+    #region Tests subdomain prefixes bloqués
+
+    [TestMethod]
+    public async Task BlockedSubdomainPrefix_Iqri_ShouldReturn410()
+    {
+        // Arrange
+        _httpContext.Request.Headers.Referer = "https://iqri.example.com";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+        _nextMock.Verify(next => next(_httpContext), Times.Never);
+    }
+
+    [TestMethod]
+    public async Task BlockedSubdomainPrefix_IqriWithDigit_ShouldReturn410()
+    {
+        // Arrange
+        _httpContext.Request.Headers.Referer = "https://iqri1.spammer.net";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+        _nextMock.Verify(next => next(_httpContext), Times.Never);
+    }
+
+    [TestMethod]
+    public async Task BlockedSubdomainPrefix_IqriWithMultipleDigits_ShouldReturn410()
+    {
+        // Arrange
+        _httpContext.Request.Headers.Referer = "https://iqri18.malicious.org";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+        _nextMock.Verify(next => next(_httpContext), Times.Never);
+    }
+
+    [TestMethod]
+    public async Task BlockedSubdomainPrefix_Hk_ShouldReturn410()
+    {
+        // Arrange
+        _httpContext.Request.Headers.Referer = "https://hk.spam.com";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+        _nextMock.Verify(next => next(_httpContext), Times.Never);
+    }
+
+    [TestMethod]
+    public async Task BlockedSubdomainPrefix_HkWithDigits_ShouldReturn410()
+    {
+        // Arrange
+        _httpContext.Request.Headers.Referer = "https://hk12.badsite.net";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+        _nextMock.Verify(next => next(_httpContext), Times.Never);
+    }
+
+    [TestMethod]
+    public async Task BlockedSubdomainPrefix_CaseInsensitive_ShouldReturn410()
+    {
+        // Arrange
+        _httpContext.Request.Headers.Referer = "https://IQRI5.EXAMPLE.COM";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+    }
+
+    [TestMethod]
+    public async Task BlockedSubdomainPrefix_WithLettersAfterDigits_ShouldNotBlock()
+    {
+        // Arrange - "iqri1x" should NOT match because it has letters after digits
+        _httpContext.Request.Headers.Referer = "https://iqri1x.example.com";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        _nextMock.Verify(next => next(_httpContext), Times.Once);
+        Assert.AreNotEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+    }
+
+    [TestMethod]
+    public async Task BlockedSubdomainPrefix_NotAtStart_ShouldNotBlock()
+    {
+        // Arrange - "subiqri1" should NOT match because iqri is not at the start
+        _httpContext.Request.Headers.Referer = "https://subiqri1.example.com";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        _nextMock.Verify(next => next(_httpContext), Times.Once);
+        Assert.AreNotEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+    }
+
+    [TestMethod]
+    public async Task BlockedSubdomainPrefix_InDomainName_ShouldNotBlock()
+    {
+        // Arrange - "iqri" in domain name (not subdomain) should NOT be blocked by prefix rules
+        _httpContext.Request.Headers.Referer = "https://iqrisite.com";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        _nextMock.Verify(next => next(_httpContext), Times.Once);
+        Assert.AreNotEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+    }
+
+    #endregion
+
     #region Tests patterns bloqués
 
     [TestMethod]
@@ -294,8 +432,8 @@ public class ReferrerBlockMiddlewareTests
     [TestMethod]
     public async Task MalformedReferer_ShouldCallNext()
     {
-        // Arrange
-        _httpContext.Request.Headers.Referer = "not-a-valid-uri";
+        // Arrange - Use a truly malformed URI that will throw UriFormatException
+        _httpContext.Request.Headers.Referer = "https://[invalid-ipv6";
         var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
 
         // Act
@@ -576,7 +714,8 @@ public class ReferrerBlockMiddlewareTests
         {
             BlockedDomains = null!,
             BlockedTLDs = null!,
-            BlockedPatterns = null!
+            BlockedPatterns = null!,
+            BlockedSubdomainPrefixes = null!
         };
         _httpContext.Request.Headers.Referer = "https://spam.icu";
         var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, customOptions);

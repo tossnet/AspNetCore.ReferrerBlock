@@ -67,44 +67,50 @@ public class ReferrerBlockMiddleware
 
     private bool IsBlocked(string host)
     {
-        //// Check TLDs - TLDs already contain the dot (e.g., ".icu")
-        //if (_options.BlockedTLDs != null &&
-        //    _options.BlockedTLDs.Any(tld => !string.IsNullOrWhiteSpace(tld) &&
-        //                                   host.EndsWith(tld, StringComparison.OrdinalIgnoreCase)))
-        //    return true;
-
-        //// Check exact domains
-        //if (_options.BlockedDomains != null &&
-        //    _options.BlockedDomains.Contains(host, StringComparer.OrdinalIgnoreCase))
-        //    return true;
-
-        //// Check subdomains
-        //if (_options.BlockedDomains.Any(blocked => host.EndsWith($".{blocked}", StringComparison.OrdinalIgnoreCase)))
-        //    return true;
-
-        //// Check patterns
-        //if (_options.BlockedDomains != null &&
-        //   _options.BlockedDomains.Any(blocked => !string.IsNullOrWhiteSpace(blocked) &&
-        //                                          host.EndsWith($".{blocked}", StringComparison.OrdinalIgnoreCase)))
-        //    return true;
-
-
         // Check TLDs - TLDs already contain the dot (e.g., ".icu")
-        if (_options.BlockedTLDs.Any(tld => host.EndsWith(tld, StringComparison.OrdinalIgnoreCase)))
+        if (_options.BlockedTLDs?.Any(tld => !string.IsNullOrEmpty(tld) && 
+            host.EndsWith(tld, StringComparison.OrdinalIgnoreCase)) == true)
             return true;
 
         // Check exact domains
-        if (_options.BlockedDomains.Contains(host, StringComparer.OrdinalIgnoreCase))
+        if (_options.BlockedDomains?.Contains(host, StringComparer.OrdinalIgnoreCase) == true)
             return true;
 
         // Check subdomains
-        if (_options.BlockedDomains.Any(blocked => host.EndsWith($".{blocked}", StringComparison.OrdinalIgnoreCase)))
+        if (_options.BlockedDomains?.Any(blocked => !string.IsNullOrEmpty(blocked) && 
+            host.EndsWith($".{blocked}", StringComparison.OrdinalIgnoreCase)) == true)
             return true;
 
         // Check patterns
-        if (_options.BlockedPatterns.Any(pattern => host.Contains(pattern, StringComparison.OrdinalIgnoreCase)))
+        if (_options.BlockedPatterns?.Any(pattern => !string.IsNullOrEmpty(pattern) && 
+            host.Contains(pattern, StringComparison.OrdinalIgnoreCase)) == true)
+            return true;
+
+        // Check subdomain prefixes (e.g., iqri1., hk12.)
+        if (_options.BlockedSubdomainPrefixes?.Any(prefix => !string.IsNullOrEmpty(prefix) && 
+            IsMatchingSubdomainPrefix(host, prefix)) == true)
             return true;
 
         return false;
+    }
+
+    /// <summary>
+    /// Checks if host starts with prefix followed by optional digits and a dot.
+    /// Matches: iqri., iqri1., iqri18. but not iqrix. or iqri1x.
+    /// </summary>
+    private static bool IsMatchingSubdomainPrefix(ReadOnlySpan<char> host, string prefix)
+    {
+        if (!host.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
+            return false;
+
+        var remaining = host[prefix.Length..];
+
+        // Skip any digits after the prefix
+        int i = 0;
+        while (i < remaining.Length && char.IsAsciiDigit(remaining[i]))
+            i++;
+
+        // Must be followed by a dot (subdomain separator)
+        return i < remaining.Length && remaining[i] == '.';
     }
 }

@@ -21,7 +21,8 @@ The middleware uses default blocking rules. Optionally, you can customize them:
 app.UseReferrerBlock(options => { 
     options.BlockedDomains.Add("spam-site.com"); 
     options.BlockedTLDs.Add(".suspicious"); 
-    options.BlockedPatterns.Add("malicious"); 
+    options.BlockedPatterns.Add("malicious");
+    options.BlockedSubdomainPrefixes.Add("spam");
     });
 ```
 
@@ -44,12 +45,14 @@ app.UseReferrerBlock(options =>
     options.BlockedTLDs.Clear();
     options.BlockedDomains.Clear();
     options.BlockedPatterns.Clear();
+    options.BlockedSubdomainPrefixes.Clear();
     
     // Add only your custom rules
     options.BlockedDomains.Add("spam-site.com");
     options.BlockedDomains.Add("malicious-domain.com");
     options.BlockedTLDs.Add(".scam");
     options.BlockedPatterns.Add("suspicious");
+    options.BlockedSubdomainPrefixes.Add("bot");
 });
 ```
 
@@ -60,9 +63,34 @@ app.UseReferrerBlock(options =>
     // Keep default rules and add custom ones
     options.BlockedDomains.Add("spam-site.com"); 
     options.BlockedTLDs.Add(".suspicious"); 
-    options.BlockedPatterns.Add("malicious"); 
+    options.BlockedPatterns.Add("malicious");
+    options.BlockedSubdomainPrefixes.Add("bot");
 });
 ```
+
+### Block subdomain prefixes with numeric variations
+The `BlockedSubdomainPrefixes` option allows you to block subdomains that start with a specific prefix followed by optional digits.
+
+```csharp
+app.UseReferrerBlock(options => 
+{ 
+    // Block subdomains like: iqri., iqri1., iqri18., hk., hk1., hk12., etc.
+    options.BlockedSubdomainPrefixes.Add("iqri");
+    options.BlockedSubdomainPrefixes.Add("hk");
+    options.BlockedSubdomainPrefixes.Add("spam");
+});
+```
+
+This will block referrers like:
+- `iqri.example.com` ✅ blocked
+- `iqri1.spammer.net` ✅ blocked
+- `iqri18.malicious.org` ✅ blocked
+- `hk12.badsite.com` ✅ blocked
+
+But will NOT block:
+- `iqri1x.example.com` ❌ not blocked (has letters after digits)
+- `myiqri1.example.com` ❌ not blocked (prefix not at start)
+- `iqrisite.com` ❌ not blocked (in domain name, not subdomain)
 
 ## 📊 Blocked Domains
 
