@@ -71,6 +71,19 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | fiveminutesgames.com | 2025-12-10 | Referrer spam. |
 | Domain | s1.oneadcc.com | 2025-12-11 | Referrer spam. |
 | Domain | smartcrmmanager.com | 2025-12-11 | Referrer spam. |
+| Domain | luxury.maibirthday.com | 2025-12-12 | Referrer spam. |
+| Domain | lawyer.mqypc.com | 2025-12-12 | Referrer spam. |
+| Domain | dog.worldhxx.com | 2025-12-12 | Referrer spam. |
+| Domain | digilife.hargamakanan.com | 2025-12-13 | Referrer spam. |
+| Domain | ww51.cipicipichips.com | 2025-12-13 | Referrer spam. |
+| Domain | as.pegawai.info | 2025-12-13 | Referrer spam. |
+| Domain | one.uaetiming.com | 2025-12-13 | Referrer spam. |
+| Domain | mdsdy.com | 2025-12-13 | Referrer spam. |
+| Domain | eat.befps.com | 2025-12-13 | Referrer spam. |
+| Domain | sl.sportbooksbox.com | 2025-12-13 | Referrer spam. |
+| Domain | depe.holopoems.com | 2025-12-13 | Referrer spam. |
+| Domain | ag.samsungprinter.app | 2025-12-13 | Referrer spam. |
+| Domain | iqra(n). | 2025-12-13 | Subdomain Referrer spam. |
 
 
 
