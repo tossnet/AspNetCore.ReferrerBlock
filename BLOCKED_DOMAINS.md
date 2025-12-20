@@ -86,9 +86,15 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | iqra(n). | 2025-12-14 | Subdomain Referrer spam. |
 | Domain | us.gentaandalas.com | 2025-12-16 | Referrer spam. |
 | Domain | pub1.careyourself.info | 2025-12-16 | Referrer spam. |
-| Domain | (aaeko, aadidit).fortfunston.com | 2025-12-16 | Referrer spam. Multiple subdomain variants |
+| Domain | (aaeko, aadidit, aaruslan).fortfunston.com | 2025-12-16 | Referrer spam. Multiple subdomain variants |
 | Domain | market.balihow.com | 2025-12-16 | Referrer spam. |
 | Domain | vip.visuora.com | 2025-12-16 | Referrer spam. |
+| Domain | (depe, shan).otakugadgets.com | 2025-12-19 | Referrer spam. Multiple subdomain variants|
+| Domain | edgescape.kongkrit.com | 2025-12-19 | Referrer spam. |
+| Domain | prefer.killbeast.com | 2025-12-19 | Referrer spam. |
+| Domain | tour1.thenetworthvault.com | 2025-12-19 | Referrer spam. |
+| Domain | ag.plplessables.com | 2025-12-19 | Referrer spam. |
+| Domain | domora.semangatnews.com | 2025-12-19 | Referrer spam. |
 
 
 
