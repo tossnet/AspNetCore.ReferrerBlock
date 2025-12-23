@@ -83,7 +83,7 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | sl.sportbooksbox.com | 2025-12-13 | Referrer spam. |
 | Domain | depe.holopoems.com | 2025-12-13 | Referrer spam. |
 | Domain | ag.samsungprinter.app | 2025-12-13 | Referrer spam. |
-| Domain | iqra(n). | 2025-12-14 | Subdomain Referrer spam. |
+| SubDomain | iqra(n). | 2025-12-14 | Subdomain Referrer spam. |
 | Domain | us.gentaandalas.com | 2025-12-16 | Referrer spam. |
 | Domain | pub1.careyourself.info | 2025-12-16 | Referrer spam. |
 | Domain | (aaeko, aadidit, aaruslan).fortfunston.com | 2025-12-16 | Referrer spam. Multiple subdomain variants |
@@ -95,6 +95,9 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | tour1.thenetworthvault.com | 2025-12-19 | Referrer spam. |
 | Domain | ag.plplessables.com | 2025-12-19 | Referrer spam. |
 | Domain | domora.semangatnews.com | 2025-12-19 | Referrer spam. |
+| Domain | blog.toysbazar.in | 2025-12-22 | Referrer spam. 
+| Domain | vox.missagendalimon.com | 2025-12-22 | Referrer spam. |
+| Domain | trading.kuliahan.com | 2025-12-22 | Referrer spam. |
 
 
 
