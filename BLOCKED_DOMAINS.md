@@ -98,6 +98,12 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | blog.toysbazar.in | 2025-12-22 | Referrer spam. 
 | Domain | vox.missagendalimon.com | 2025-12-22 | Referrer spam. |
 | Domain | trading.kuliahan.com | 2025-12-22 | Referrer spam. |
+| Domain | banana.fpsrhz.com | 2025-12-25 | Referrer spam. |
+| Domain | host.cinvex.us | 2025-12-25 | Referrer spam. |
+| Domain | (try, www).efpsz.com | 2025-12-25 | Referrer spam. Multiple subdomain variants|
+| Domain | change.xindashop.com | 2025-12-25 | Referrer spam. |
+| Domain | business.hummingbass.com | 2025-12-25 | Referrer spam. |
+| Domain | ocean.laogedashu.com | 2025-12-25 | Referrer spam. |
 
 
 
