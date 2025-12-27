@@ -99,11 +99,15 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | vox.missagendalimon.com | 2025-12-22 | Referrer spam. |
 | Domain | trading.kuliahan.com | 2025-12-22 | Referrer spam. |
 | Domain | banana.fpsrhz.com | 2025-12-25 | Referrer spam. |
-| Domain | host.cinvex.us | 2025-12-25 | Referrer spam. |
+| Domain | (host, market).cinvex.us | 2025-12-25 | Referrer spam. Multiple subdomain variants|
 | Domain | (try, www).efpsz.com | 2025-12-25 | Referrer spam. Multiple subdomain variants|
 | Domain | change.xindashop.com | 2025-12-25 | Referrer spam. |
 | Domain | business.hummingbass.com | 2025-12-25 | Referrer spam. |
 | Domain | ocean.laogedashu.com | 2025-12-25 | Referrer spam. |
+| Domain | (aaruslan1, aaadit).garberstreet.com | 2025-12-26 | Referrer spam. Multiple subdomain variants|
+| Domain | fashion.gamingzilla.online | 2025-12-26 | Referrer spam. |
+| Domain | plans1.salsaotaku.com | 2025-12-26 | Referrer spam. |
+| Domain | azs1.stoicismcode.com | 2025-12-26 | Referrer spam. |
 
 
 
