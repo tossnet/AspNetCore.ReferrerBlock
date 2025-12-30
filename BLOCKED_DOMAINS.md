@@ -108,6 +108,13 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | fashion.gamingzilla.online | 2025-12-26 | Referrer spam. |
 | Domain | plans1.salsaotaku.com | 2025-12-26 | Referrer spam. |
 | Domain | azs1.stoicismcode.com | 2025-12-26 | Referrer spam. |
+| SubDomain | her(n) | 2025-12-29 | Referrer spam. Multiple subdomain variants|
+| Domain | shop.playgamesio.online | 2025-12-29 | Referrer spam. |
+| Domain | ag.homestylista.com | 2025-12-29 | Referrer spam. |
+| Domain | aahera.debutstars.com | 2025-12-29 | Referrer spam. |
+| Domain | buzz.spookymilklife.org | 2025-12-29 | Referrer spam. |
+| Domain | www.uixgn.com | 2025-12-29 | Referrer spam. |
+| Domain | directsharing.com | 2025-12-29 | Referrer spam. |
 
 
 
