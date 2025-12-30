@@ -15,6 +15,8 @@ public class ReferrerBlockOptions
     // List of blocked subdomain prefixes (e.g., "iqri" matches iqri., iqri1., iqri18., etc.)
     public HashSet<string> BlockedSubdomainPrefixes { get; set; } = new(StringComparer.OrdinalIgnoreCase)
     {
+        "aaeko",
+        "aaruslan",
         "iqri",
         "iqra",
         "hk",

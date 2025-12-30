@@ -111,10 +111,15 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | SubDomain | her(n) | 2025-12-29 | Subdomain Referrer spam|
 | Domain | shop.playgamesio.online | 2025-12-29 | Referrer spam |
 | Domain | ag.homestylista.com | 2025-12-29 | Referrer spam |
-| Domain | aahera.debutstars.com | 2025-12-29 | Referrer spam |
+| Domain | (aahera,aaruslan, aaeko).debutstars.com | 2025-12-29 | Referrer spam. Multiple subdomain variants |
 | Domain | buzz.spookymilklife.org | 2025-12-29 | Referrer spam |
 | Domain | uixgn.com | 2025-12-29 | Referrer spam |
 | Domain | directsharing.com | 2025-12-29 | Referrer spam |
+| SubDomain | aaeko. | 2025-12-30 | Subdomain Referrer spam |
+| SubDomain | aaruslan. | 2025-12-30 | Subdomain Referrer spam |
+| Domain | empatb.globetraveo.com | 2025-12-30 | Referrer spam |
+| Domain | patiox.infoinz.com | 2025-12-30 | Referrer spam |
+| Domain | vkj.wedesignplus.com | 2025-12-30 | Referrer spam |
 
 
 
