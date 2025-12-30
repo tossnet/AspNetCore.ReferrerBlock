@@ -19,7 +19,7 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 
 | Type | Value | Added | Reason |
 |------|-------|-------|--------|
-| Domain | (hk n.)airplanesupdate.com | 2025-11-23 | Referrer spam. Multiple subdomain variants) |
+| Domain | (hk n.)airplanesupdate.com | 2025-11-23 | Referrer spam. Multiple subdomain variants |
 | Domain | periodcostume.top | 2025-11-23 | Referrer spam |
 | Domain | globalinsuranceresourcecenter.com | 2025-11-23 | Referrer spam |
 | Domain | liveasiannews.com | 2025-11-24 | Referrer spam |
@@ -63,58 +63,58 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | dgfzg.com | 2025-12-08 | Referrer spam |
 | Domain | guide.zqauc.com | 2025-12-08 | Referrer spam |
 | Domain | wantmybots.com | 2025-12-09 | Referrer spam. Multiple subdomain variants |
-| Domain | saastoolcompare.com | 2025-12-09 | Referrer spam.  |
-| Domain | tr.theguineapigexpert.com | 2025-12-10 | Referrer spam.  |
-| Domain | crmsoftwareedge.com | 2025-12-10 | Referrer spam.  |
+| Domain | saastoolcompare.com | 2025-12-09 | Referrer spam  |
+| Domain | tr.theguineapigexpert.com | 2025-12-10 | Referrer spam  |
+| Domain | crmsoftwareedge.com | 2025-12-10 | Referrer spam  |
 | Domain | topikbisnis.com | 2025-12-10 | Referrer spam. Multiple subdomain variants |
 | Domain | (iqri n.,hk n.)penjudihijrah.com | 2025-12-10 | Referrer spam. Multiple subdomain variants |
-| Domain | fiveminutesgames.com | 2025-12-10 | Referrer spam. |
-| Domain | s1.oneadcc.com | 2025-12-11 | Referrer spam. |
-| Domain | smartcrmmanager.com | 2025-12-11 | Referrer spam. |
-| Domain | luxury.maibirthday.com | 2025-12-12 | Referrer spam. |
-| Domain | lawyer.mqypc.com | 2025-12-12 | Referrer spam. |
-| Domain | dog.worldhxx.com | 2025-12-12 | Referrer spam. |
-| Domain | digilife.hargamakanan.com | 2025-12-13 | Referrer spam. |
-| Domain | ww51.cipicipichips.com | 2025-12-13 | Referrer spam. |
-| Domain | as.pegawai.info | 2025-12-13 | Referrer spam. |
-| Domain | one.uaetiming.com | 2025-12-13 | Referrer spam. |
-| Domain | mdsdy.com | 2025-12-13 | Referrer spam. |
-| Domain | eat.befps.com | 2025-12-13 | Referrer spam. |
-| Domain | sl.sportbooksbox.com | 2025-12-13 | Referrer spam. |
-| Domain | depe.holopoems.com | 2025-12-13 | Referrer spam. |
-| Domain | ag.samsungprinter.app | 2025-12-13 | Referrer spam. |
-| SubDomain | iqra(n). | 2025-12-14 | Subdomain Referrer spam. |
-| Domain | us.gentaandalas.com | 2025-12-16 | Referrer spam. |
-| Domain | pub1.careyourself.info | 2025-12-16 | Referrer spam. |
+| Domain | fiveminutesgames.com | 2025-12-10 | Referrer spam |
+| Domain | s1.oneadcc.com | 2025-12-11 | Referrer spam |
+| Domain | smartcrmmanager.com | 2025-12-11 | Referrer spam |
+| Domain | luxury.maibirthday.com | 2025-12-12 | Referrer spam |
+| Domain | lawyer.mqypc.com | 2025-12-12 | Referrer spam |
+| Domain | dog.worldhxx.com | 2025-12-12 | Referrer spam |
+| Domain | digilife.hargamakanan.com | 2025-12-13 | Referrer spam |
+| Domain | ww51.cipicipichips.com | 2025-12-13 | Referrer spam |
+| Domain | as.pegawai.info | 2025-12-13 | Referrer spam |
+| Domain | one.uaetiming.com | 2025-12-13 | Referrer spam |
+| Domain | mdsdy.com | 2025-12-13 | Referrer spam |
+| Domain | eat.befps.com | 2025-12-13 | Referrer spam |
+| Domain | sl.sportbooksbox.com | 2025-12-13 | Referrer spam |
+| Domain | depe.holopoems.com | 2025-12-13 | Referrer spam |
+| Domain | ag.samsungprinter.app | 2025-12-13 | Referrer spam |
+| SubDomain | iqra(n). | 2025-12-14 | Subdomain Referrer spam |
+| Domain | us.gentaandalas.com | 2025-12-16 | Referrer spam |
+| Domain | pub1.careyourself.info | 2025-12-16 | Referrer spam |
 | Domain | (aaeko, aadidit, aaruslan).fortfunston.com | 2025-12-16 | Referrer spam. Multiple subdomain variants |
-| Domain | market.balihow.com | 2025-12-16 | Referrer spam. |
-| Domain | vip.visuora.com | 2025-12-16 | Referrer spam. |
+| Domain | market.balihow.com | 2025-12-16 | Referrer spam |
+| Domain | vip.visuora.com | 2025-12-16 | Referrer spam |
 | Domain | (depe, shan).otakugadgets.com | 2025-12-19 | Referrer spam. Multiple subdomain variants|
-| Domain | edgescape.kongkrit.com | 2025-12-19 | Referrer spam. |
-| Domain | prefer.killbeast.com | 2025-12-19 | Referrer spam. |
-| Domain | tour1.thenetworthvault.com | 2025-12-19 | Referrer spam. |
-| Domain | ag.plplessables.com | 2025-12-19 | Referrer spam. |
-| Domain | domora.semangatnews.com | 2025-12-19 | Referrer spam. |
-| Domain | blog.toysbazar.in | 2025-12-22 | Referrer spam. 
-| Domain | vox.missagendalimon.com | 2025-12-22 | Referrer spam. |
-| Domain | trading.kuliahan.com | 2025-12-22 | Referrer spam. |
-| Domain | banana.fpsrhz.com | 2025-12-25 | Referrer spam. |
+| Domain | edgescape.kongkrit.com | 2025-12-19 | Referrer spam |
+| Domain | prefer.killbeast.com | 2025-12-19 | Referrer spam |
+| Domain | tour1.thenetworthvault.com | 2025-12-19 | Referrer spam |
+| Domain | ag.plplessables.com | 2025-12-19 | Referrer spam |
+| Domain | domora.semangatnews.com | 2025-12-19 | Referrer spam |
+| Domain | blog.toysbazar.in | 2025-12-22 | Referrer spam 
+| Domain | vox.missagendalimon.com | 2025-12-22 | Referrer spam |
+| Domain | trading.kuliahan.com | 2025-12-22 | Referrer spam |
+| Domain | banana.fpsrhz.com | 2025-12-25 | Referrer spam |
 | Domain | (host, market).cinvex.us | 2025-12-25 | Referrer spam. Multiple subdomain variants|
 | Domain | (try, www).efpsz.com | 2025-12-25 | Referrer spam. Multiple subdomain variants|
-| Domain | change.xindashop.com | 2025-12-25 | Referrer spam. |
-| Domain | business.hummingbass.com | 2025-12-25 | Referrer spam. |
-| Domain | ocean.laogedashu.com | 2025-12-25 | Referrer spam. |
+| Domain | change.xindashop.com | 2025-12-25 | Referrer spam |
+| Domain | business.hummingbass.com | 2025-12-25 | Referrer spam |
+| Domain | ocean.laogedashu.com | 2025-12-25 | Referrer spam |
 | Domain | (aaruslan1, aaadit).garberstreet.com | 2025-12-26 | Referrer spam. Multiple subdomain variants|
-| Domain | fashion.gamingzilla.online | 2025-12-26 | Referrer spam. |
-| Domain | plans1.salsaotaku.com | 2025-12-26 | Referrer spam. |
-| Domain | azs1.stoicismcode.com | 2025-12-26 | Referrer spam. |
-| SubDomain | her(n) | 2025-12-29 | Referrer spam. Multiple subdomain variants|
-| Domain | shop.playgamesio.online | 2025-12-29 | Referrer spam. |
-| Domain | ag.homestylista.com | 2025-12-29 | Referrer spam. |
-| Domain | aahera.debutstars.com | 2025-12-29 | Referrer spam. |
-| Domain | buzz.spookymilklife.org | 2025-12-29 | Referrer spam. |
-| Domain | www.uixgn.com | 2025-12-29 | Referrer spam. |
-| Domain | directsharing.com | 2025-12-29 | Referrer spam. |
+| Domain | fashion.gamingzilla.online | 2025-12-26 | Referrer spam |
+| Domain | plans1.salsaotaku.com | 2025-12-26 | Referrer spam |
+| Domain | azs1.stoicismcode.com | 2025-12-26 | Referrer spam |
+| SubDomain | her(n) | 2025-12-29 | Subdomain Referrer spam|
+| Domain | shop.playgamesio.online | 2025-12-29 | Referrer spam |
+| Domain | ag.homestylista.com | 2025-12-29 | Referrer spam |
+| Domain | aahera.debutstars.com | 2025-12-29 | Referrer spam |
+| Domain | buzz.spookymilklife.org | 2025-12-29 | Referrer spam |
+| Domain | uixgn.com | 2025-12-29 | Referrer spam |
+| Domain | directsharing.com | 2025-12-29 | Referrer spam |
 
 
 
