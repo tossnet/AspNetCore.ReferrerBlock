@@ -120,6 +120,15 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | empatb.globetraveo.com | 2025-12-30 | Referrer spam |
 | Domain | patiox.infoinz.com | 2025-12-30 | Referrer spam |
 | Domain | vkj.wedesignplus.com | 2025-12-30 | Referrer spam |
+| Domain | small-investment.thelottoz.com | 2026-01-01 | Referrer spam |
+| Domain | hrm2.afservices247.com | 2026-01-01 | Referrer spam |
+| Domain | bm.apkjos.com | 2026-01-01 | Referrer spam |
+| Domain | crmsoftwareradar.com | 2026-01-01 | Referrer spam |
+| Domain | crmautomationhub.com | 2026-01-01 | Referrer spam |
+| Domain | bestv.suaragoogle.com | 2026-01-01 | Referrer spam |
+| Domain | iqboy2.reliefspaca.com | 2026-01-01 | Referrer spam |
+| Domain | cloudflowcrm.com | 2026-01-01 | Referrer spam |
+| Domain | soundgarden.aplikasigadget.com | 2026-01-01 | Referrer spam |
 
 
 
