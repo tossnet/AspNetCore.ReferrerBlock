@@ -126,9 +126,15 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | crmsoftwareradar.com | 2026-01-01 | Referrer spam |
 | Domain | crmautomationhub.com | 2026-01-01 | Referrer spam |
 | Domain | bestv.suaragoogle.com | 2026-01-01 | Referrer spam |
-| Domain | iqboy2.reliefspaca.com | 2026-01-01 | Referrer spam |
+| SubDomain | iqboy2(.reliefspaca.com) | 2026-01-01 | Referrer spam |
 | Domain | cloudflowcrm.com | 2026-01-01 | Referrer spam |
 | Domain | soundgarden.aplikasigadget.com | 2026-01-01 | Referrer spam |
+| Domain | business.divyarashi.com | 2026-01-04 | Referrer spam |
+| Domain | yourcrmsoftware.com | 2026-01-04 | Referrer spam |
+| Domain | ib.yokerja.com | 2026-01-04 | Referrer spam |
+| Domain | (as, tsm, san).trbcards.us | 2026-01-04 | Referrer spam. Multiple subdomain variants|
+| Domain | agj.jadwaltv.co | 2026-01-04 | Referrer spam |
+| SubDomain | iqboy2 (.acrago.best) | 2026-01-04 | Subdomain Referrer spam |
 
 
 
