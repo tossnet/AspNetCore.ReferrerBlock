@@ -133,8 +133,13 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | yourcrmsoftware.com | 2026-01-04 | Referrer spam |
 | Domain | ib.yokerja.com | 2026-01-04 | Referrer spam |
 | Domain | (as, tsm, san).trbcards.us | 2026-01-04 | Referrer spam. Multiple subdomain variants|
-| Domain | agj.jadwaltv.co | 2026-01-04 | Referrer spam |
-| SubDomain | iqboy2 (.acrago.best) | 2026-01-04 | Subdomain Referrer spam |
+| Domain | (agj, mdj).jadwaltv.co | 2026-01-04 | Referrer spam. Multiple subdomain variants |
+| SubDomain | iqboy(n) (.acrago.best) | 2026-01-04 | Subdomain Referrer spam |
+| SubDomain | ag. | 2026-01-05 | Subdomain Referrer spam |
+| Domain | (san, tsm).warkom.click | 2026-01-08 | Referrer spam. Multiple subdomain variants |
+| SubDomain | san. and tsm. | 2026-01-08 | Subdomain Referrer spam |
+| Domain | jn.couriermalaysia.info | 2026-01-08 | Referrer spam |
+| Domain | siding.obortimur.com | 2026-01-08 | Referrer spam |
 
 
 

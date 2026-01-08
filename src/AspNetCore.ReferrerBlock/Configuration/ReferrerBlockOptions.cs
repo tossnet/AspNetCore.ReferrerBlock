@@ -17,11 +17,14 @@ public class ReferrerBlockOptions
     {
         "aaeko",
         "aaruslan",
-        "iqboy2",
+        "ag",
+        "iqboy",
         "iqri",
         "iqra",
         "hk",
         "her",
+        "san",
+        "tsm",
     };
 
     // List of suspicious domain patterns (incomplete or generic domains)
@@ -68,11 +71,12 @@ public class ReferrerBlockOptions
         "cinvex.us",
         "cipicipichips.com",
         "cloudflowcrm.com",
+        "couriermalaysia.info",
+        "cozynestplans.com",
         "crmautomationhub.com",
         "crminsightspro.com",
         "crmsoftwareedge.com",
         "crmsoftwareradar.com",
-        "cozynestplans.com",
         "debutstars.com",
         "def-atk.com",
         "dgfzg.com",
@@ -111,6 +115,7 @@ public class ReferrerBlockOptions
         "lovesyh.com",
         "mitsubishiprice.com",
         "nativeindonesia.com",
+        "obortimur.com"
         "pengkicau.com",
         "periodcostume.top",
         "playgamesio.online",
