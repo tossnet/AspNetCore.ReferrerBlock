@@ -118,7 +118,7 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | SubDomain | aaeko. | 2025-12-30 | Subdomain Referrer spam |
 | SubDomain | aaruslan. | 2025-12-30 | Subdomain Referrer spam |
 | Domain | empatb.globetraveo.com | 2025-12-30 | Referrer spam |
-| Domain | patiox.infoinz.com | 2025-12-30 | Referrer spam |
+| Domain | (patiox, cak).infoinz.com | 2025-12-30 | Referrer spam. Multiple subdomain variants |
 | Domain | vkj.wedesignplus.com | 2025-12-30 | Referrer spam |
 | Domain | small-investment.thelottoz.com | 2026-01-01 | Referrer spam |
 | Domain | hrm2.afservices247.com | 2026-01-01 | Referrer spam |
@@ -133,13 +133,19 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | yourcrmsoftware.com | 2026-01-04 | Referrer spam |
 | Domain | ib.yokerja.com | 2026-01-04 | Referrer spam |
 | Domain | (as, tsm, san).trbcards.us | 2026-01-04 | Referrer spam. Multiple subdomain variants|
-| Domain | (agj, mdj).jadwaltv.co | 2026-01-04 | Referrer spam. Multiple subdomain variants |
+| Domain | (agj, mdj, trj).jadwaltv.co | 2026-01-04 | Referrer spam. Multiple subdomain variants |
 | SubDomain | iqboy(n) (.acrago.best) | 2026-01-04 | Subdomain Referrer spam |
 | SubDomain | ag. | 2026-01-05 | Subdomain Referrer spam |
 | Domain | (san, tsm).warkom.click | 2026-01-08 | Referrer spam. Multiple subdomain variants |
 | SubDomain | san. and tsm. | 2026-01-08 | Subdomain Referrer spam |
 | Domain | jn.couriermalaysia.info | 2026-01-08 | Referrer spam |
 | Domain | siding.obortimur.com | 2026-01-08 | Referrer spam |
+| Domain | go.datakurir.com | 2026-01-11 | Referrer spam |
+| Domain | www.kurir.rs | 2026-01-11 | Referrer spam |
+| Domain | (gb, digital, health).harianhaluan.com | 2026-01-11 | Referrer spam |
+| Domain | business.bangpuzut.com | 2026-01-11 | Referrer spam |
+| Domain | azs2.dapurkristia.com | 2026-01-11 | Referrer spam |
+| Domain | crmtoolsuite.com | 2026-01-11 | Referrer spam |
 
 
 
