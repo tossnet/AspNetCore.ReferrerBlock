@@ -141,11 +141,19 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | jn.couriermalaysia.info | 2026-01-08 | Referrer spam |
 | Domain | siding.obortimur.com | 2026-01-08 | Referrer spam |
 | Domain | go.datakurir.com | 2026-01-11 | Referrer spam |
-| Domain | www.kurir.rs | 2026-01-11 | Referrer spam |
-| Domain | (gb, digital, health).harianhaluan.com | 2026-01-11 | Referrer spam |
+| Domain | (www).kurir.rs | 2026-01-11 | Referrer spam |
+| Domain | (gb, digital, health).harianhaluan.com | 2026-01-11 | Referrer spam. Multiple subdomain variants  |
 | Domain | business.bangpuzut.com | 2026-01-11 | Referrer spam |
 | Domain | azs2.dapurkristia.com | 2026-01-11 | Referrer spam |
 | Domain | crmtoolsuite.com | 2026-01-11 | Referrer spam |
+| Domain | platform.radarcirebon.tv | 2026-01-14 | Referrer spam |
+| Domain | digital.harianterbit.com | 2026-01-14 | Referrer spam |
+| Domain | health.pikiran-rakyat.com | 2026-01-14 | Referrer spam |
+| Domain | nextgenerpsystem.com | 2026-01-14 | Referrer spam |
+| SubDomain | iqrar2 (.dammeamnhac.io.vn) | 2026-01-14 | Subdomain Referrer spam |
+| Domain | skilldigitalacademy.com | 2026-01-14 | Referrer spam |
+| SubDomain | aahera. (armaghgaa.info) | 2026-01-14 | Subdomain Referrer spam |
+| Domain | thoughtful.kalengsoda.com | 2026-01-14 | Referrer spam |
 
 
 
