@@ -22,28 +22,36 @@ public class ReferrerBlockMiddleware
 
     public async Task InvokeAsync(HttpContext context)
     {
-        var referer = context.Request.Headers.Referer.ToString();
-
-        if (!string.IsNullOrEmpty(referer))
+        var refererHeader = context.Request.Headers.Referer;
+        
+        if (refererHeader.Count > 0 && !string.IsNullOrEmpty(refererHeader[0]))
         {
+            var referer = refererHeader[0].AsSpan();
+            
             try
             {
-                // add a schema by defaut is missing
-                if (!referer.StartsWith("http://", StringComparison.OrdinalIgnoreCase) &&
-                    !referer.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
+                // Parse host directly without full Uri allocation when possible
+                ReadOnlySpan<char> host;
+                
+                if (referer.StartsWith("http://", StringComparison.OrdinalIgnoreCase))
                 {
-                    referer = "https://" + referer;
+                    host = ExtractHost(referer["http://".Length..]);
+                }
+                else if (referer.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
+                {
+                    host = ExtractHost(referer["https://".Length..]);
+                }
+                else
+                {
+                    // No scheme - treat as host directly
+                    host = ExtractHost(referer);
                 }
 
-
-                var uri = new Uri(referer);
-                var host = uri.Host.ToLowerInvariant();
-
-                if (IsBlocked(host))
+                if (host.Length > 0 && IsBlocked(host))
                 {
                     _logger.LogWarning(
                         "🚫 Referrer spam blocked: {Host} | IP: {IP} | Path: {Path}",
-                        host,
+                        host.ToString(),
                         context.Connection.RemoteIpAddress,
                         context.Request.Path
                     );
@@ -56,40 +64,80 @@ public class ReferrerBlockMiddleware
                     return;
                 }
             }
-            catch (UriFormatException)
+            catch (Exception ex) when (ex is UriFormatException or ArgumentException)
             {
-                _logger.LogDebug("Malformed referrer detected: {Referer}", referer);
+                _logger.LogDebug("Malformed referrer detected: {Referer}", refererHeader[0]);
             }
         }
 
         await _next(context);
     }
 
-    private bool IsBlocked(string host)
+    /// <summary>
+    /// Extracts the host from a URL without scheme, handling port and path.
+    /// </summary>
+    private static ReadOnlySpan<char> ExtractHost(ReadOnlySpan<char> urlWithoutScheme)
+    {
+        // Find the end of host (first / or : for port, or end of string)
+        var endIndex = urlWithoutScheme.IndexOfAny(['/', ':', '?', '#']);
+        var host = endIndex >= 0 ? urlWithoutScheme[..endIndex] : urlWithoutScheme;
+        
+        return host;
+    }
+
+    private bool IsBlocked(ReadOnlySpan<char> host)
     {
         // Check TLDs - TLDs already contain the dot (e.g., ".icu")
-        if (_options.BlockedTLDs?.Any(tld => !string.IsNullOrEmpty(tld) && 
-            host.EndsWith(tld, StringComparison.OrdinalIgnoreCase)) == true)
-            return true;
+        if (_options.BlockedTLDs is { Count: > 0 })
+        {
+            foreach (var tld in _options.BlockedTLDs)
+            {
+                if (!string.IsNullOrEmpty(tld) && host.EndsWith(tld, StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+        }
 
         // Check exact domains
-        if (_options.BlockedDomains?.Contains(host, StringComparer.OrdinalIgnoreCase) == true)
-            return true;
+        if (_options.BlockedDomains is { Count: > 0 })
+        {
+            // HashSet lookup requires string, but it's O(1)
+            var hostString = host.ToString();
+            if (_options.BlockedDomains.Contains(hostString))
+                return true;
 
-        // Check subdomains
-        if (_options.BlockedDomains?.Any(blocked => !string.IsNullOrEmpty(blocked) && 
-            host.EndsWith($".{blocked}", StringComparison.OrdinalIgnoreCase)) == true)
-            return true;
+            // Check subdomains - avoid string interpolation
+            foreach (var blocked in _options.BlockedDomains)
+            {
+                if (string.IsNullOrEmpty(blocked))
+                    continue;
+
+                // Check if host ends with ".blocked"
+                if (host.Length > blocked.Length + 1 &&
+                    host[^(blocked.Length + 1)] == '.' &&
+                    host[^blocked.Length..].Equals(blocked, StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+        }
 
         // Check patterns
-        if (_options.BlockedPatterns?.Any(pattern => !string.IsNullOrEmpty(pattern) && 
-            host.Contains(pattern, StringComparison.OrdinalIgnoreCase)) == true)
-            return true;
+        if (_options.BlockedPatterns is { Count: > 0 })
+        {
+            foreach (var pattern in _options.BlockedPatterns)
+            {
+                if (!string.IsNullOrEmpty(pattern) && host.Contains(pattern, StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+        }
 
         // Check subdomain prefixes (e.g., iqri1., hk12.)
-        if (_options.BlockedSubdomainPrefixes?.Any(prefix => !string.IsNullOrEmpty(prefix) && 
-            IsMatchingSubdomainPrefix(host, prefix)) == true)
-            return true;
+        if (_options.BlockedSubdomainPrefixes is { Count: > 0 })
+        {
+            foreach (var prefix in _options.BlockedSubdomainPrefixes)
+            {
+                if (!string.IsNullOrEmpty(prefix) && IsMatchingSubdomainPrefix(host, prefix))
+                    return true;
+            }
+        }
 
         return false;
     }

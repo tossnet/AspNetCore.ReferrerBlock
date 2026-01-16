@@ -154,6 +154,10 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | skilldigitalacademy.com | 2026-01-14 | Referrer spam |
 | SubDomain | aahera. (armaghgaa.info) | 2026-01-14 | Subdomain Referrer spam |
 | Domain | thoughtful.kalengsoda.com | 2026-01-14 | Referrer spam |
+| Domain | siding.kandisnews.com | 2026-01-16 | Referrer spam |
+| Domain | www.phonevibe.net | 2026-01-16 | Referrer spam |
+| Domain | (aaadit, aadidit,aaruslan1,aasep).armaghgaa.info | 2026-01-16 | Referrer spam. Multiple subdomain variants |
+| SubDomain | aaadit. aadidit, aaruslan1, siding | 2026-01-16 | Subdomain Referrer spam |
 
 
 

@@ -15,9 +15,12 @@ public class ReferrerBlockOptions
     // List of blocked subdomain prefixes (e.g., "iqri" matches iqri., iqri1., iqri18., etc.)
     public HashSet<string> BlockedSubdomainPrefixes { get; set; } = new(StringComparer.OrdinalIgnoreCase)
     {
+        "aaadit",
         "aaeko",
+        "aadidit",
         "aahera",
         "aaruslan",
+        "aasep",
         "ag",
         "iqboy",
         "iqra",
@@ -26,6 +29,7 @@ public class ReferrerBlockOptions
         "hk",
         "her",
         "san",
+        "siding",
         "tsm",
     };
 
@@ -114,6 +118,7 @@ public class ReferrerBlockOptions
         "jawapos.com",
         "jy47.top",
         "kalengsoda.com",
+        "kandisnews.com",
         "kebumenupdate.com",
         "killbeast.com",
         "kiprahkita.com",
@@ -129,6 +134,7 @@ public class ReferrerBlockOptions
         "obortimur.com",
         "pengkicau.com",
         "periodcostume.top",
+        "phonevibe.net",
         "playgamesio.online",
         "qccaaf.com",
         "maibirthday.com",

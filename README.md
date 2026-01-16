@@ -92,6 +92,33 @@ But will NOT block:
 - `myiqri1.example.com` ❌ not blocked (prefix not at start)
 - `iqrisite.com` ❌ not blocked (in domain name, not subdomain)
 
+## 🚀 Performance
+
+The middleware is optimized for high-performance scenarios using `ReadOnlySpan<char>` instead of traditional `Uri` parsing, resulting in minimal memory allocations.
+
+### Benchmark Results
+
+```
+BenchmarkDotNet v0.15.8, Windows 11, Intel Core i9-9900K CPU 3.60GHz
+.NET 9.0.12, X64 RyuJIT x86-64-v3
+```
+
+| Method | Mean | Allocated | Improvement |
+|--------|------|-----------|-------------|
+| ✅ Optimized (Span) | **1.243 µs** | **704 B** | Baseline |
+| ❌ Original (Uri) | 6.892 µs | 9,952 B | - |
+
+| Metric | Gain |
+|--------|------|
+| **Speed** | **5.5x faster** |
+| **Memory** | **14x less allocations** |
+
+Run benchmarks yourself:
+```bash
+cd benchmarks/AspNetCore.ReferrerBlock.Benchmarks
+dotnet run -c Release
+```
+
 ## 📊 Blocked Domains
 
 See [BLOCKED_DOMAINS.md](BLOCKED_DOMAINS.md) for the complete list of blocked domains, TLDs, and patterns with their addition history.

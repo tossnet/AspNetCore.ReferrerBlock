@@ -4,6 +4,9 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Folder Name="/benchmarks/">
+    <Project Path="benchmarks/AspNetCore.ReferrerBlock.Benchmarks/AspNetCore.ReferrerBlock.Benchmarks.csproj" />
+  </Folder>
   <Folder Name="/src/">
     <Project Path="src/AspNetCore.ReferrerBlock/AspNetCore.ReferrerBlock.csproj" />
   </Folder>
