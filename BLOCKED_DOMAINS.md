@@ -158,7 +158,11 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | www.phonevibe.net | 2026-01-16 | Referrer spam |
 | Domain | (aaadit, aadidit,aaruslan1,aasep).armaghgaa.info | 2026-01-16 | Referrer spam. Multiple subdomain variants |
 | SubDomain | aaadit. aadidit, aaruslan1, siding | 2026-01-16 | Subdomain Referrer spam |
-
+| Domain |adk.moverchelsea-ma.com | 2026-01-22 | Referrer spam |
+| Domain |erpzenhub.com | 2026-01-22 | Referrer spam |
+| Domain | (agg, zall).tinvietonline.com | 2026-01-22 | Referrer spam. Multiple subdomain variants |
+| Domain |crmsoftwarepulse.com | 2026-01-22 | Referrer spam |
+| Domain |restia.britainaja.com | 2026-01-22 | Referrer spam |
 
 
 ---

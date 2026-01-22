@@ -8,7 +8,7 @@
     <Nullable>enable</Nullable>
 
 		<PackageId>ReferrerBlock</PackageId>
-		<Version>2026.01.16</Version>
+		<Version>2026.01.22</Version>
 		<Authors>Christophe Peugnet</Authors>
 		<Company></Company>
 		<Description>ReferrerBlock middleware to block referrer spam and malicious traffic based on TLDs, domains, and patterns. Perfect for Blazor, MVC, and Razor Pages applications.</Description>
@@ -23,7 +23,7 @@
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
-		<Copyright>2025</Copyright>
+		<Copyright>2025-2026</Copyright>
 		<PackageIcon>ReferrerBlock.png</PackageIcon>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
