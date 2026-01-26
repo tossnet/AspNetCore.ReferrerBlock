@@ -163,6 +163,19 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | (agg, zall).tinvietonline.com | 2026-01-22 | Referrer spam. Multiple subdomain variants |
 | Domain |crmsoftwarepulse.com | 2026-01-22 | Referrer spam |
 | Domain |restia.britainaja.com | 2026-01-22 | Referrer spam |
+| Domain |ipl.rojupdate.com | 2026-01-26 | Referrer spam |
+| Domain |fs22modsbrasil.com | 2026-01-26 | Referrer spam |
+| Domain |ex.jaldayat.com | 2026-01-26 | Referrer spam |
+| Domain |portal.babyfocus.us | 2026-01-26 | Referrer spam |
+| Domain |garisd.garisrealita.com | 2026-01-26 | Referrer spam |
+| Domain |capitalpratico.com | 2026-01-26 | Referrer spam |
+| Domain |sdk0freegame.top | 2026-01-26 | Referrer spam |
+| Domain |jeu-tarot-en-ligne.com | 2026-01-26 | Referrer spam |
+| Domain |finance.kuninganmass.com | 2026-01-26 | Referrer spam |
+| SubDomain |aarestu. | 2026-01-26 | Subdomain Referrer spam |
+| Domain |smartcrmsystems.com | 2026-01-26 | Referrer spam |
+| Domain |news.networthranker.com | 2026-01-26 | Referrer spam |
+
 
 
 ---
