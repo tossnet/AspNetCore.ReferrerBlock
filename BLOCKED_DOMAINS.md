@@ -175,6 +175,10 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | SubDomain |aarestu. | 2026-01-26 | Subdomain Referrer spam |
 | Domain |smartcrmsystems.com | 2026-01-26 | Referrer spam |
 | Domain |news.networthranker.com | 2026-01-26 | Referrer spam |
+| Domain |crmsoftwarefocus.com | 2026-02-01 | Referrer spam |
+| Domain | (lefigaro, timecapsule).topnewsource.com | 2026-02-01 | Referrer spam. Multiple subdomain variants |
+| Domain |smart.hkhty.com | 2026-02-01 | Referrer spam |
+| Domain |realitytv.purextop.com | 2026-02-01 | Referrer spam |
 
 
 
