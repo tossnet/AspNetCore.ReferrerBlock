@@ -179,7 +179,11 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | (lefigaro, timecapsule).topnewsource.com | 2026-02-01 | Referrer spam. Multiple subdomain variants |
 | Domain |smart.hkhty.com | 2026-02-01 | Referrer spam |
 | Domain |realitytv.purextop.com | 2026-02-01 | Referrer spam |
-
+| Pattern |crmsoftware | 2026-02-05 | Pattern referrer spam |
+| Domain |smartcustomercrm.com | 2026-02-05 | Referrer spam |
+| Domain |s1.quiztests.net | 2026-02-05 | Referrer spam |
+| Domain |airconditioner.haijogja.com | 2026-02-05 | Referrer spam |
+| Domain |tolyzo.com | 2026-02-05 | Referrer spam |
 
 
 ---
