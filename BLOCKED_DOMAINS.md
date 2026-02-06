@@ -184,6 +184,13 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain |s1.quiztests.net | 2026-02-05 | Referrer spam |
 | Domain |airconditioner.haijogja.com | 2026-02-05 | Referrer spam |
 | Domain |tolyzo.com | 2026-02-05 | Referrer spam |
+| Domain |meng.warkom.click | 2026-02-06 | Referrer spam |
+| Domain |business.autofinotech.com | 2026-02-06 | Referrer spam |
+| Domain |exterior.pikiran-rakyat.com | 2026-02-06 | Referrer spam |
+| Domain |market.solderpanas.com | 2026-02-06 | Referrer spam |
+| Domain |toolivopro.com | 2026-02-06 | Referrer spam |
+| Domain |innvora.fokussumatera.com | 2026-02-06 | Referrer spam |
+| Domain |yto.gameyi.top | 2026-02-06 | Referrer spam |
 
 
 ---
