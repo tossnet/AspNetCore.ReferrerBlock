@@ -274,6 +274,22 @@ public class ReferrerBlockMiddlewareTests
         _nextMock.Verify(next => next(_httpContext), Times.Never);
     }
 
+
+    [TestMethod]
+    public async Task BlockedSubdomainPrefix_agWithDigit_ShouldReturn410()
+    {
+        // Arrange
+        _httpContext.Request.Headers.Referer = "ag2.tanelly.com";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+        _nextMock.Verify(next => next(_httpContext), Times.Never);
+    }
+
     [TestMethod]
     public async Task BlockedSubdomainPrefix_IqriWithMultipleDigits_ShouldReturn410()
     {

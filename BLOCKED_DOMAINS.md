@@ -190,7 +190,15 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain |market.solderpanas.com | 2026-02-06 | Referrer spam |
 | Domain |toolivopro.com | 2026-02-06 | Referrer spam |
 | Domain |innvora.fokussumatera.com | 2026-02-06 | Referrer spam |
-| Domain |yto.gameyi.top | 2026-02-06 | Referrer spam |
+| Domain |yto.gameyi.top | 2026-02-06 | Referrer spam 
+| Domain | businesserptools.com | 2026-02-08 | Referrer spam |
+| Domain | hk16z.congnghevr.info | 2026-02-08 | Referrer spam |
+| Domain | smartcrmmanagers.com | 2026-02-08 | Referrer spam |
+| Domain | sdk7freegame.top | 2026-02-08 | Referrer spam |
+| Domain | bookkeeping.wibuh.com | 2026-02-08 | Referrer spam |
+| Domain | saasgeniushub.com | 2026-02-08 | Referrer spam |
+| Domain | aivoratools.com | 2026-02-08 | Referrer spam |
+| Domain | businesscrmsuccess.com | 2026-02-08 | Referrer spam |
 
 
 ---
