@@ -23,8 +23,12 @@ public class ReferrerBlockOptions
         "aaruslan",
         "aasep",
         "ag",
+        "ay",
+        "exterior",
+        "iqbos",
         "iqboy",
         "iqra",
+        "iqrae",
         "iqrar",
         "iqri",
         "hk",
@@ -59,6 +63,16 @@ public class ReferrerBlockOptions
         "teknovidia",
         "tempatbelajar",
         "toworld123",
+    };
+
+    // List of wildcard patterns (* = any characters)
+    // Examples: "*crmsoftware*.com" matches mycrmsoftwarehub.com, crmsoftwareedge.com
+    //           "sdk*freegame.top" matches sdk0freegame.top, sdk7freegame.top
+    public HashSet<string> BlockedWildcardPatterns { get; set; } = new(StringComparer.OrdinalIgnoreCase)
+    {
+        "*crmsoftware*.com",
+        "sdk*freegame.top",
+        "smartcrm*.com",
     };
 
     // List of blocked complete domains
@@ -187,17 +201,13 @@ public class ReferrerBlockOptions
         "salsaotaku.com",
         "samsungprinter.app",
         "scfxdl.com",
-        "sdk0freegame.top",
-        "sdk7freegame.top",
         "secondechance.org",
         "semangatnews.com",
         "selectaproperty.us",
         "seohost.us",
+        "sikag.com",
         "skilldigitalacademy.com",
         "smartcustomercrm.com",
-        "smartcrmmanager.com",
-        "smartcrmmanagers.com",
-        "smartcrmsystems.com",
         "soldatiki.info",
         "solderpanas.com",
         "spookymilklife.org",

@@ -194,11 +194,20 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | businesserptools.com | 2026-02-08 | Referrer spam |
 | Domain | hk16z.congnghevr.info | 2026-02-08 | Referrer spam |
 | Domain | smartcrmmanagers.com | 2026-02-08 | Referrer spam |
-| Domain | sdk7freegame.top | 2026-02-08 | Referrer spam |
+| WildcardPattern | sdk*freegame.top | 2026-02-08 | Wildcard spam pattern |
 | Domain | bookkeeping.wibuh.com | 2026-02-08 | Referrer spam |
 | Domain | saasgeniushub.com | 2026-02-08 | Referrer spam |
 | Domain | aivoratools.com | 2026-02-08 | Referrer spam |
 | Domain | businesscrmsuccess.com | 2026-02-08 | Referrer spam |
+| WildcardPattern | * crmsoftware * | 2026-02-10 | Wildcard spam pattern |
+| WildcardPattern | smartcrm * | 2026-02-10 | Wildcard spam pattern |
+| SubDomain | (iqrae(n), iqbos(n)) .techscope.me | 2026-02-10 | Subdomain Referrer spam |
+| SubDomain | ay.thecarsreport.com | 2026-02-10 | Subdomain Referrer spam |
+| SubDomain | exterior.(metrojambi.com, siadit.net) | 2026-02-10 | Subdomain Referrer spam |
+| Domain | cuisine.sikag.com | 2026-02-10 | Referrer spam |
+| Domain | promo.babyfocus.us | 2026-02-10 | Referrer spam |
+| Domain | beenews.com.br | 2026-02-10 | Referrer spam |
+
 
 
 ---

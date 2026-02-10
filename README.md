@@ -92,6 +92,46 @@ But will NOT block:
 - `myiqri1.example.com` ❌ not blocked (prefix not at start)
 - `iqrisite.com` ❌ not blocked (in domain name, not subdomain)
 
+### Block domains with wildcard patterns
+The `BlockedWildcardPatterns` option allows you to block domains using wildcard patterns where `*` matches any characters.
+
+```csharp
+app.UseReferrerBlock(options => 
+{ 
+    // Block patterns like: *crmsoftware*.com, sdk*freegame.top
+    options.BlockedWildcardPatterns.Add("*crmsoftware*.com");
+    options.BlockedWildcardPatterns.Add("sdk*freegame.top");
+    options.BlockedWildcardPatterns.Add("*spam*.net");
+});
+```
+
+Examples of what gets blocked:
+- `*crmsoftware*.com` blocks:
+  - `crmsoftwareedge.com` ✅ blocked
+  - `crmsoftwarefocus.com` ✅ blocked
+  - `mycrmsoftwarehub.com` ✅ blocked
+  - `testcrmsoftware.com` ✅ blocked
+  - But NOT `crmsoftwareedge.net` ❌ (different TLD)
+
+- `sdk*freegame.top` blocks:
+  - `sdk0freegame.top` ✅ blocked
+  - `sdk3freegame.top` ✅ blocked
+  - `sdk7freegame.top` ✅ blocked
+  - `sdkanyfreegame.top` ✅ blocked
+  - But NOT `sdkfreegame.com` ❌ (different TLD)
+
+- `*spam*.net` blocks:
+  - `spam.net` ✅ blocked
+  - `myspamsite.net` ✅ blocked
+  - `spamnetwork.net` ✅ blocked
+  - `test-spam-tools.net` ✅ blocked
+
+**Why use wildcard patterns instead of simple patterns?**
+- Simple patterns (BlockedPatterns) use `Contains()` and match anywhere in any TLD
+- Wildcard patterns give you precise control with specific TLD requirements
+- Example: `"crmsoftware"` in BlockedPatterns would block ALL TLDs (.com, .net, .org, etc.)
+- Example: `"*crmsoftware*.com"` in BlockedWildcardPatterns blocks ONLY .com domains
+
 ## 🚀 Performance
 
 The middleware is optimized for high-performance scenarios using `ReadOnlySpan<char>` instead of traditional `Uri` parsing, resulting in minimal memory allocations.

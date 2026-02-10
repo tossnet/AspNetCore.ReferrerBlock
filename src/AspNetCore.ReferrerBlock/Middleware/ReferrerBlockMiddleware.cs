@@ -139,6 +139,16 @@ public class ReferrerBlockMiddleware
             }
         }
 
+        // Check wildcard patterns (e.g., *crmsoftware*.com, sdk*freegame.top)
+        if (_options.BlockedWildcardPatterns is { Count: > 0 })
+        {
+            foreach (var pattern in _options.BlockedWildcardPatterns)
+            {
+                if (!string.IsNullOrEmpty(pattern) && MatchesWildcardPattern(host, pattern))
+                    return true;
+            }
+        }
+
         return false;
     }
 
@@ -160,5 +170,63 @@ public class ReferrerBlockMiddleware
 
         // Must be followed by a dot (subdomain separator)
         return i < remaining.Length && remaining[i] == '.';
+    }
+
+    /// <summary>
+    /// Checks if host matches a wildcard pattern (* = any characters).
+    /// Examples: "*crmsoftware*.com" matches mycrmsoftwarehub.com, crmsoftwareedge.com
+    ///           "sdk*freegame.top" matches sdk0freegame.top, sdk7freegame.top
+    /// </summary>
+    private static bool MatchesWildcardPattern(ReadOnlySpan<char> host, string pattern)
+    {
+        // Handle simple cases
+        if (pattern == "*")
+            return true;
+
+        if (!pattern.Contains('*'))
+            return host.Equals(pattern, StringComparison.OrdinalIgnoreCase);
+
+        var patternSpan = pattern.AsSpan();
+        int hostPos = 0;
+        int patternPos = 0;
+        int lastWildcardPos = -1;
+        int lastHostPos = -1;
+
+        while (hostPos < host.Length)
+        {
+            if (patternPos < patternSpan.Length && patternSpan[patternPos] == '*')
+            {
+                // Remember wildcard position for backtracking
+                lastWildcardPos = patternPos;
+                lastHostPos = hostPos;
+                patternPos++;
+            }
+            else if (patternPos < patternSpan.Length && 
+                     (char.ToLowerInvariant(host[hostPos]) == char.ToLowerInvariant(patternSpan[patternPos])))
+            {
+                // Characters match, advance both
+                hostPos++;
+                patternPos++;
+            }
+            else if (lastWildcardPos != -1)
+            {
+                // Mismatch after wildcard, backtrack
+                patternPos = lastWildcardPos + 1;
+                lastHostPos++;
+                hostPos = lastHostPos;
+            }
+            else
+            {
+                // No match and no wildcard to backtrack to
+                return false;
+            }
+        }
+
+        // Skip remaining wildcards in pattern
+        while (patternPos < patternSpan.Length && patternSpan[patternPos] == '*')
+            patternPos++;
+
+        // Match if we've consumed both host and pattern
+        return patternPos == patternSpan.Length;
     }
 }

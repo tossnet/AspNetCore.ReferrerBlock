@@ -583,6 +583,271 @@ public class ReferrerBlockMiddlewareTests
 
     #endregion
 
+    #region Tests wildcard patterns bloqués
+
+    [TestMethod]
+    public async Task BlockedWildcardPattern_CrmSoftwareWithSuffix_ShouldReturn410()
+    {
+        // Arrange - Pattern: *crmsoftware*.com
+        _httpContext.Request.Headers.Referer = "https://crmsoftwareedge.com";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+        _nextMock.Verify(next => next(_httpContext), Times.Never);
+    }
+
+    [TestMethod]
+    public async Task BlockedWildcardPattern_CrmSoftwareWithPrefix_ShouldReturn410()
+    {
+        // Arrange - Pattern: *crmsoftware*.com
+        _httpContext.Request.Headers.Referer = "https://mycrmsoftware.com";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+        _nextMock.Verify(next => next(_httpContext), Times.Never);
+    }
+
+    [TestMethod]
+    public async Task BlockedWildcardPattern_CrmSoftwareWithBoth_ShouldReturn410()
+    {
+        // Arrange - Pattern: *crmsoftware*.com
+        _httpContext.Request.Headers.Referer = "https://mycrmsoftwarehub.com";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+        _nextMock.Verify(next => next(_httpContext), Times.Never);
+    }
+
+    [TestMethod]
+    public async Task BlockedWildcardPattern_CrmSoftwareMultipleVariants_ShouldReturn410()
+    {
+        // Arrange - Pattern: *crmsoftware*.com
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+        var blockedUrls = new[]
+        {
+            "https://crmsoftwarefocus.com",
+            "https://crmsoftwarepulse.com",
+            "https://crmsoftwareradar.com",
+            "https://crmsoftwarespotlight.com",
+            "https://testcrmsoftwaretools.com"
+        };
+
+        foreach (var url in blockedUrls)
+        {
+            var context = new DefaultHttpContext();
+            context.Request.Headers.Referer = url;
+            context.Connection.RemoteIpAddress = IPAddress.Parse("192.168.1.1");
+
+            // Act
+            await middleware.InvokeAsync(context);
+
+            // Assert
+            Assert.AreEqual(StatusCodes.Status410Gone, context.Response.StatusCode, $"Failed to block: {url}");
+        }
+    }
+
+    [TestMethod]
+    public async Task BlockedWildcardPattern_SdkFreeGame_ShouldReturn410()
+    {
+        // Arrange - Pattern: sdk*freegame.top
+        _httpContext.Request.Headers.Referer = "https://sdk0freegame.top";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+        _nextMock.Verify(next => next(_httpContext), Times.Never);
+    }
+
+    [TestMethod]
+    public async Task BlockedWildcardPattern_SdkFreeGameMultipleVariants_ShouldReturn410()
+    {
+        // Arrange - Pattern: sdk*freegame.top
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+        var blockedUrls = new[]
+        {
+            "https://sdk0freegame.top",
+            "https://sdk3freegame.top",
+            "https://sdk7freegame.top",
+            "https://sdk123freegame.top",
+            "https://sdkanyfreegame.top"
+        };
+
+        foreach (var url in blockedUrls)
+        {
+            var context = new DefaultHttpContext();
+            context.Request.Headers.Referer = url;
+            context.Connection.RemoteIpAddress = IPAddress.Parse("192.168.1.1");
+
+            // Act
+            await middleware.InvokeAsync(context);
+
+            // Assert
+            Assert.AreEqual(StatusCodes.Status410Gone, context.Response.StatusCode, $"Failed to block: {url}");
+        }
+    }
+
+    [TestMethod]
+    public async Task BlockedWildcardPattern_CaseInsensitive_ShouldReturn410()
+    {
+        // Arrange - Pattern: *crmsoftware*.com
+        _httpContext.Request.Headers.Referer = "https://CRMSOFTWAREEDGE.COM";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+    }
+
+    [TestMethod]
+    public async Task BlockedWildcardPattern_WithSubdomain_ShouldReturn410()
+    {
+        // Arrange - Pattern: *crmsoftware*.com
+        _httpContext.Request.Headers.Referer = "https://www.crmsoftwareedge.com";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+    }
+
+    [TestMethod]
+    public async Task BlockedWildcardPattern_WithPath_ShouldReturn410()
+    {
+        // Arrange - Pattern: sdk*freegame.top
+        _httpContext.Request.Headers.Referer = "https://sdk7freegame.top/path/to/page";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+    }
+
+    [TestMethod]
+    public async Task BlockedWildcardPattern_WithPort_ShouldReturn410()
+    {
+        // Arrange - Pattern: sdk*freegame.top
+        _httpContext.Request.Headers.Referer = "https://sdk3freegame.top:8080";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        Assert.AreEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+    }
+
+    [TestMethod]
+    public async Task WildcardPattern_NoMatch_ShouldCallNext()
+    {
+        // Arrange - Should NOT match pattern *crmsoftware*.com
+        _httpContext.Request.Headers.Referer = "https://mycrmtools.com";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        _nextMock.Verify(next => next(_httpContext), Times.Once);
+        Assert.AreNotEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+    }
+
+    [TestMethod]
+    public async Task WildcardPattern_DifferentTLD_ShouldCallNext()
+    {
+        // Arrange - Should NOT match pattern *crmsoftware*.com (different TLD)
+        // Use a domain that contains "crmsoftware" but with .net TLD
+        // First, create custom options without "crmsoftware" in BlockedPatterns
+        var customOptions = new ReferrerBlockOptions();
+        customOptions.BlockedPatterns.Clear(); // Clear to avoid matching by simple pattern
+        customOptions.BlockedWildcardPatterns.Add("*crmsoftware*.com");
+
+        _httpContext.Request.Headers.Referer = "https://crmsoftwareedge.net";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, customOptions);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        _nextMock.Verify(next => next(_httpContext), Times.Once);
+        Assert.AreNotEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+    }
+
+    [TestMethod]
+    public async Task WildcardPattern_PartialMatch_ShouldCallNext()
+    {
+        // Arrange - Should NOT match pattern sdk*freegame.top
+        _httpContext.Request.Headers.Referer = "https://sdkgames.top";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, _options);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert
+        _nextMock.Verify(next => next(_httpContext), Times.Once);
+        Assert.AreNotEqual(StatusCodes.Status410Gone, _httpContext.Response.StatusCode);
+    }
+
+    [TestMethod]
+    public async Task WildcardPattern_EmptyInOptions_ShouldNotCrash()
+    {
+        // Arrange
+        var customOptions = new ReferrerBlockOptions();
+        customOptions.BlockedWildcardPatterns.Add(string.Empty);
+        _httpContext.Request.Headers.Referer = "https://example.com";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, customOptions);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert - Should not crash
+        _nextMock.Verify(next => next(_httpContext), Times.Once);
+    }
+
+    [TestMethod]
+    public async Task WildcardPattern_NullCollection_ShouldNotCrash()
+    {
+        // Arrange
+        var customOptions = new ReferrerBlockOptions
+        {
+            BlockedWildcardPatterns = null!,
+            BlockedPatterns = new HashSet<string>(StringComparer.OrdinalIgnoreCase), // Empty to avoid simple pattern match
+            BlockedDomains = new HashSet<string>(StringComparer.OrdinalIgnoreCase),
+            BlockedTLDs = new HashSet<string>(StringComparer.OrdinalIgnoreCase),
+            BlockedSubdomainPrefixes = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        };
+        _httpContext.Request.Headers.Referer = "https://example.com";
+        var middleware = new ReferrerBlockMiddleware(_nextMock.Object, _loggerMock.Object, customOptions);
+
+        // Act
+        await middleware.InvokeAsync(_httpContext);
+
+        // Assert - Should not crash, should allow through (no blocking rules)
+        _nextMock.Verify(next => next(_httpContext), Times.Once);
+    }
+
+    #endregion
+
     #region Tests des cas limites (Edge Cases)
 
     [TestMethod]
