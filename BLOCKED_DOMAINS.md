@@ -207,6 +207,13 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | cuisine.sikag.com | 2026-02-10 | Referrer spam |
 | Domain | promo.babyfocus.us | 2026-02-10 | Referrer spam |
 | Domain | beenews.com.br | 2026-02-10 | Referrer spam |
+| Domain | sitedeets.com | 2026-02-15 | Referrer spam |
+| SubDomain | (iqraye(n)) .techscope.me | 2026-02-15 | Subdomain Referrer spam |
+| SubDomain | (h(n)) .dunegame.top | 2026-02-15 | Subdomain Referrer spam |
+| Domain | vinyl.klikbantuan.com | 2026-02-15 | domain Referrer spam |
+| Domain | www.dinheironlinecash.com | 2026-02-15 | domain Referrer spam |
+| Domain | hotelion.volvoreviewcars.com | 2026-02-15 | domain Referrer spam |
+| Domain | autoaitoday.com | 2026-02-15 | domain Referrer spam |
 
 
 
