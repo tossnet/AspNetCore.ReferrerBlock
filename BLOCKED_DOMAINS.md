@@ -214,6 +214,20 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | www.dinheironlinecash.com | 2026-02-15 | domain Referrer spam |
 | Domain | hotelion.volvoreviewcars.com | 2026-02-15 | domain Referrer spam |
 | Domain | autoaitoday.com | 2026-02-15 | domain Referrer spam |
+| Domain | cursosnorio.com.br | 2026-02-28 | domain Referrer spam |
+| SubDomain |tan(n)., rk(n), ald(n) | 2026-02-28 | Subdomain Referrer spam |
+| Domain | data.rentalregime.com | 2026-02-28 | domain Referrer spam |
+| Domain | ailerio.com | 2026-02-28 | domain Referrer spam |
+| Domain | travel.rareinfo.org | 2026-02-28 | domain Referrer spam |
+| Domain | yixcq.com | 2026-02-28 | domain Referrer spam |
+| Domain | stellar.cararabic.com | 2026-02-28 | domain Referrer spam |
+| Domain | fashion.hermesoutletsmall.com | 2026-02-28 | domain Referrer spam |
+| Domain | www.sportlit.com | 2026-02-28 | domain Referrer spam |
+| Domain | playhop.com | 2026-02-28 | domain Referrer spam |
+| Domain | aicrmbusiness.com | 2026-02-28 | domain Referrer spam |
+| Domain | earn.auzmuz.com | 2026-02-28 | domain Referrer spam |
+| Domain | opsandcrm.com | 2026-02-28 | domain Referrer spam |
+| Domain | bp.cricketworlds.net | 2026-02-28 | domain Referrer spam |
 
 
 
