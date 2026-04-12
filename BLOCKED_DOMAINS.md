@@ -228,6 +228,44 @@ Use [whois.com](https://www.whois.com/) or similar services to investigate suspi
 | Domain | earn.auzmuz.com | 2026-02-28 | domain Referrer spam |
 | Domain | opsandcrm.com | 2026-02-28 | domain Referrer spam |
 | Domain | bp.cricketworlds.net | 2026-02-28 | domain Referrer spam |
+| SubDomain | azs2. | 2026-03-21 | Subdomain Referrer spam |
+| SubDomain | finance. | 2026-03-21 | Subdomain Referrer spam |
+| SubDomain | fn. | 2026-03-21 | Subdomain Referrer spam |
+| SubDomain | tn(n) | 2026-03-21 | Subdomain Referrer spam |
+| SubDomain | iqberk(n). | 2026-03-21 | Subdomain Referrer spam |
+| Domain | cck2.casualfun3642.com | 2026-03-21 | Referrer spam |
+| Domain | celtic.sacetmode.com | 2026-03-21 | Referrer spam |
+| Domain | crm.esoftgames.com | 2026-03-21 | Referrer spam |
+| Domain | crmtechnologyhub.com | 2026-03-21 | Referrer spam |
+| Domain | earn.celiacmagazine.com | 2026-03-21 | Referrer spam |
+| Domain | erpreviewshub.com | 2026-03-21 | Referrer spam |
+| Domain | erpsuitepro.com | 2026-03-21 | Referrer spam |
+| Domain | fluxgame.top | 2026-03-21 | Referrer spam |
+| Domain | highxtop.com | 2026-03-21 | Referrer spam |
+| Domain | lapviral.com | 2026-03-21 | Referrer spam |
+| Domain | luxuryroyal.feji.io | 2026-03-21 | Referrer spam |
+| Domain | play.vulkanstarsgames.com | 2026-03-21 | Referrer spam |
+| Domain | sage-erp.edueuphoria.com | 2026-03-21 | Referrer spam |
+| Domain | see.mindxtop.com | 2026-03-21 | Referrer spam |
+| Domain | startup.alexbeloev.com | 2026-03-21 | Referrer spam |
+| Domain | test.jumbocalculator.com | 2026-03-21 | Referrer spam |
+| Domain | telegram-184.com | 2026-03-21 | Referrer spam |
+| Domain | treat.calculatorutility.com | 2026-03-21 | Referrer spam |
+| Domain | www.sirviral.com | 2026-03-21 | Referrer spam |
+| Domain | home.adampaxman.com | 2026-04-12 | Referrer spam |
+| Domain | www.autovaza.com | 2026-04-12 | Referrer spam |
+| Domain | www.dreametrip.com | 2026-04-12 | Referrer spam |
+| Domain | www.homivy.net | 2026-04-12 | Referrer spam |
+| Domain | iqira2.lawyerforyou.us | 2026-04-12 | Referrer spam. Multiple subdomain variants |
+| Domain | www.leafnpaw.com | 2026-04-12 | Referrer spam |
+| Domain | www.lifestylisher.com | 2026-04-12 | Referrer spam |
+| Domain | hdd1.llq-fibres.com | 2026-04-12 | Referrer spam |
+| Domain | www.mindivy.net | 2026-04-12 | Referrer spam |
+| Domain | eu.petronu.com | 2026-04-12 | Referrer spam |
+| Domain | atlas.taboolanews.com | 2026-04-12 | Referrer spam |
+| Domain | www.wunderground.com | 2026-04-12 | Referrer spam |
+| SubDomain | iqira(n). | 2026-04-12 | Subdomain Referrer spam |
+| WildcardPattern | lawin60*.net | 2026-04-12 | Wildcard spam pattern (lawin60pro.net, lawin60ultra.net) |
 
 
 
